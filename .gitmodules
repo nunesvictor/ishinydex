@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/nunesvictor/ishinydex-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/nunesvictor/ishinydex-frontend.git
