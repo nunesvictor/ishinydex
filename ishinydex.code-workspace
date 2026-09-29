@@ -1,0 +1,49 @@
+{
+  // Workspace do projeto integrado: abra com
+  //   code ishinydex.code-workspace
+  // As pastas backend/ e frontend/ ganham cor no Explorer e nas abas pela
+  // extensão Folder Path Color (recomendada abaixo).
+  "folders": [
+    // Raiz do repositório (compose, README, CI). Precisa vir junto: a
+    // extensão de cores monta o caminho a partir dela.
+    { "name": "ishinydex", "path": "." },
+    { "name": "backend · Django", "path": "backend" },
+    { "name": "frontend · Flutter", "path": "frontend" }
+  ],
+  "settings": {
+    // backend/ e frontend/ já aparecem como pastas próprias: some com a cópia
+    // dentro da raiz (Explorer e busca), sem esconder as pastas de cima.
+    "files.exclude": {
+      "backend": true,
+      "frontend": true
+    },
+    "folder-path-color.folders": [
+      {
+        "path": "backend",
+        "color": "custom1",
+        "symbol": "DJ",
+        "tooltip": "Backend · Django"
+      },
+      {
+        "path": "frontend",
+        "color": "custom2",
+        "symbol": "FL",
+        "tooltip": "Frontend · Flutter"
+      }
+    ],
+    "workbench.colorCustomizations": {
+      // Verde do Django (djangoproject.com) e azul do Flutter.
+      "folderPathColor.custom1": "#44B78B",
+      "folderPathColor.custom2": "#0175C2"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "VisbyDev.folder-path-color",
+      "Dart-Code.flutter",
+      "Dart-Code.dart-code",
+      "ms-python.python",
+      "ms-azuretools.vscode-docker"
+    ]
+  }
+}
