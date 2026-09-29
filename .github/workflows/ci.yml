@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  stack:
+    name: Stack completa (docker compose)
+    runs-on: ubuntu-latest
+    env:
+      # Sem compressão dos sprites: o CI só precisa ver a stack subir.
+      SPRITES_OPTIMIZE: "0"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: true
+
+      # Valores aleatórios a cada execução (nada com cara de segredo no repo).
+      - name: Gerar .env de teste
+        run: |
+          cp .env.example .env
+          sed -i \
+            -e "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$(openssl rand -hex 16)/" \
+            -e "s/^SECRET_KEY=.*/SECRET_KEY=$(openssl rand -hex 32)/" \
+            -e "s/^DJANGO_SUPERUSER_PASSWORD=.*/DJANGO_SUPERUSER_PASSWORD=$(openssl rand -hex 12)/" \
+            .env
+
+      - name: Validar o compose
+        run: docker compose config --quiet
+
+      - name: Build
+        run: docker compose build
+
+      - name: Subir
+        run: docker compose up -d
+
+      - name: App e API respondendo
+        run: |
+          for _ in $(seq 1 60); do
+            curl -sf -o /dev/null localhost:8090/ && break
+            sleep 5
+          done
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8090/)" = 200
+          # API exige login: 401 prova que o nginx chega ao backend migrado.
+          for _ in $(seq 1 60); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' localhost:8090/api/)
+            [ "$code" = 401 ] && break
+            sleep 5
+          done
+          echo "api: $code"
+          test "$code" = 401
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8090/admin/login/)" = 200
+
+      - name: Logs (se falhar)
+        if: failure()
+        run: docker compose logs --no-color
+
+      - name: Derrubar
+        if: always()
+        run: docker compose down -v
