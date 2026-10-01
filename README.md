@@ -4,8 +4,9 @@ Gerenciador pessoal de PersonalDex no estilo das boxes do Pokémon HOME: dexes,
 boxes, espécimes (shiny, alfa, pokébola, OT…) e progresso por geração.
 
 Este repositório junta a aplicação completa e sobe tudo com um único
-`docker compose`. O código fica em dois repositórios, incluídos aqui como
-**git submodules**:
+`docker compose`: é **o único jeito de instalar e fazer deploy**. O código fica
+em dois repositórios, incluídos aqui como **git submodules** (os composes que
+eles têm, quando têm, são só para desenvolvimento e testes):
 
 | Pasta | Repositório | O que é |
 | --- | --- | --- |
@@ -136,50 +137,6 @@ docker compose exec backend python manage.py restoredb    # restaura o .backup m
 
 O `restoredb` substitui o conteúdo do banco atual pelo do backup (`pg_restore
 -c`). Os backups não vão para o git.
-
-### Migrar do setup antigo (um compose por repositório)
-
-Antes deste repositório, o app rodava com o compose do `ishinydex-backend`
-(serviço `prod`, banco `django-pokedex`) e o do `ishinydex-frontend` (nginx).
-Para trazer os dados:
-
-1. **Contar** os dados no ambiente antigo, para comparar no fim:
-
-   ```sh
-   cd ishinydex-backend
-   docker compose --profile prod exec prod python manage.py shell -c \
-     "from home.models import PersonalDex, Specimen; print(PersonalDex.objects.count(), Specimen.objects.count())"
-   ```
-
-2. **Fazer o backup** no ambiente antigo:
-   `docker compose --profile prod exec prod python manage.py backupdb`
-   (vai para `ishinydex-backend/backups/`).
-3. **Montar o `.env` daqui** a partir do `.env` do backend:
-   - mesmas credenciais (senhas, `SECRET_KEY`, superusuário);
-   - `POSTGRES_DB=ishinydex`;
-   - sem `POSTGRES_HOST`, `APP_HOME`, `APP_NAME` e as variáveis do Jupyter.
-4. **Copiar o backup:** `cp ishinydex-backend/backups/<arquivo>.backup ishinydex/backups/`.
-5. **Parar o prod e o nginx antigos**, que disputam a porta 8090 com esta stack:
-
-   ```sh
-   (cd ishinydex-frontend && docker compose down)
-   (cd ishinydex-backend && docker compose --profile prod stop prod && docker compose --profile prod rm -f prod)
-   ```
-
-6. **Subir esta stack e restaurar:**
-
-   ```sh
-   cd ishinydex
-   docker compose up -d --build
-   docker compose exec backend python manage.py restoredb
-   ```
-
-7. **Conferir** as contagens (o mesmo comando do passo 1, com
-   `docker compose exec backend`) e testar no navegador.
-
-Os volumes antigos (`ishinydex-backend_data`, `ishinydex-backend_sprites`) não
-são apagados: ficam como cópia. Quando tiver certeza, remova-os com
-`docker volume rm`.
 
 ## 6. Dia a dia
 

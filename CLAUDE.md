@@ -4,17 +4,22 @@ Repositório unificador do iShinyDex: `backend/` (ishinydex-backend, Django) e `
 O usuário está aprendendo Flutter: explique as decisões. Textos, issues e PRs em pt-BR.
 
 ## Onde fica cada coisa
-- Clones locais: `~/dev/pessoal/ishinydex` (este), `~/dev/pessoal/ishinydex-backend` e `~/dev/pessoal/ishinydex-frontend` (onde se desenvolve e abre PR).
-- Convenções do frontend: `~/dev/pessoal/ishinydex-frontend/CLAUDE.md` (feature-first, Riverpod à mão, fake backend espelhando a API, 100% de cobertura, telas testadas em `compactSize`/`expandedSize`).
-- Backend: `CONTRIBUTING.md` e `docs/plans/frontend-api.md` (contrato da API) no repo do backend; testes no container de dev (`docker compose exec web python manage.py test`), pre-commit (black, isort, flake8).
+- Só existe este clone (`~/dev/pessoal/ishinydex`). Desenvolve-se em **git worktrees dos submodules**, a partir de `origin/main`, fora da pasta do repositório:
+  `git -C backend worktree add ../../be-<n>-<resumo> -b <n>-<resumo> origin/main` (idem `frontend`). Isso não muda o commit checado no submodule (o repo pai não fica sujo). Remova a worktree ao final (`git worktree remove`).
+- Convenções do frontend: `frontend/CLAUDE.md` (feature-first, Riverpod à mão, fake backend espelhando a API, 100% de cobertura, telas testadas em `compactSize`/`expandedSize`); depois de clonar ou trocar de commit, `dart run build_runner build`.
+- Backend: `CONTRIBUTING.md` e `docs/plans/frontend-api.md` (contrato da API); pre-commit (black, isort, flake8) com `PYENV_VERSION=ishinydex-3.14 pre-commit run --all-files`.
+- **Testes do backend:** o compose do backend é só de dev/testes. Numa worktree, cada cópia vira um projeto compose isolado (volumes próprios, banco sem porta publicada, runserver em `:8008`):
+  `cp .env.example src/.env && ln -s src/.env .env` (troque os `change-me`), depois `docker compose run --rm web sh -c "python manage.py compilemessages -l pt_BR && python manage.py test"`. No fim, `docker compose -p <nome-da-worktree> down -v` apaga **só** o projeto da worktree; confira com `docker compose ls` antes.
+- **Git nos submodules:** sem `user.name`/`user.email` configurados. Use `git -c user.name="Victor Nunes" -c user.email=…` no commit e faça o push com a credencial do `gh`: `git -c credential.helper= -c credential.helper='!gh auth git-credential' push`. O `git push` puro trava pedindo senha. O token não tem escopo `workflow`, então mudanças em `.github/workflows` podem ser recusadas no push.
 
 ## Rodar
-- `docker compose up -d --build` → só `:8090` publicado (nginx → `backend:8000` pela rede interna; `backend` roda `migrate` ao subir).
+- `docker compose up -d --build` → só `:8090` publicado (nginx → `backend:8000` pela rede interna; `backend` roda `migrate` ao subir). É o **único** deploy: os submodules não têm compose de deploy.
 - Backup/restore: `docker compose exec backend python manage.py backupdb|restoredb` (pasta `backups/`).
-- Nunca `docker compose down -v` (apaga o banco). O compose de dev do backend (`:8008`, banco antigo `django-pokedex`) pode rodar junto; o compose do frontend (`:8090`) não.
+- Nunca `docker compose down -v` aqui (apaga o banco).
+- iPhone: Safari em `http://<ip-do-host>:8090` → "Adicionar à Tela de Início" (sem HTTPS; decisão em #10).
 
 ## Fluxo (os três repositórios)
-- Issue → branch `<n>-<resumo>` → PR com `Closes #n` → CI verde → **o usuário revisa e faz squash merge**. Nunca push/merge direto na `main` (protegida, vale para admin).
+- Issue → branch `<n>-<resumo>` → PR com `Closes #n` → CI verde → **o usuário revisa e faz squash merge**, exceto quando ele autoriza explicitamente o merge naquele pedido. Nunca push direto na `main` (protegida, vale para admin).
 - Com 2+ PRs abertos, sempre informar a **ordem de merge** (repo + número com link, checks e o porquê).
 - Mudança que atravessa repos: issue em cada, com links cruzados; o PR do backend entra primeiro.
 - Itens aceitos sem data vão para a milestone **Backlog** do repositório onde o trabalho começa.
