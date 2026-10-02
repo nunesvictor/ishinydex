@@ -68,6 +68,9 @@ services:
   frontend:
     build:
       context: ./frontend
+      args:
+        # Build em WebAssembly nos navegadores Chromium (ver .env.example).
+        WEB_WASM: ${X_WEB_WASM:-true}
     image: ishinydex-frontend:latest
     depends_on:
       - backend

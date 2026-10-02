@@ -68,6 +68,7 @@ python3 -c "import secrets; print(secrets.token_urlsafe(18))"   # DJANGO_SUPERUS
 | `DJANGO_SUPERUSER_*` | Dados usados pelo `createsuperuser --noinput` (ver abaixo). |
 | `FRONTEND_ORIGINS` | CORS: só é preciso se o app for servido de outro endereço. Pelo nginx daqui é a mesma origem. |
 | `X_WEB_PORT` | Porta do app no host (padrão `8090`). |
+| `X_WEB_WASM` | `true` (padrão) compila o app também em WebAssembly, mais fluido nos navegadores Chromium; Safari e Firefox seguem no JavaScript. `false` gera só JavaScript. Vale no próximo `docker compose up -d --build`. |
 
 O `.env` não vai para o git (`.gitignore`). Guarde uma cópia em lugar seguro.
 
