@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>iShinyDex · teste do Dropbox</title>
+  <!-- Protótipo da etapa 0 (ishinydex#53): login do Dropbox (PKCE) e
+       armazenamento no PWA do iPhone/iPad. Descartável. -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Teste Dropbox">
+  <meta name="theme-color" content="#3f51b5">
+  <style>
+    :root { color-scheme: light dark; --accent: #3f51b5; --ok: #2e7d32; --bad: #c62828; --muted: #666; }
+    @media (prefers-color-scheme: dark) { :root { --accent: #b9c3ff; --ok: #81c784; --bad: #ef9a9a; --muted: #aaa; } }
+    body { margin: 0; font: 16px/1.45 system-ui, -apple-system, sans-serif; padding: max(16px, env(safe-area-inset-top)) 16px 32px; max-width: 640px; margin-inline: auto; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    p.lead { margin: 0 0 16px; color: var(--muted); font-size: 14px; }
+    section { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; }
+    h2 { font-size: 15px; margin: 0 0 8px; }
+    button { font: inherit; border: 0; border-radius: 999px; padding: 10px 16px; background: var(--accent); color: #fff; margin: 4px 6px 4px 0; }
+    @media (prefers-color-scheme: dark) { button { color: #00105c; } }
+    button.secondary { background: transparent; color: inherit; box-shadow: inset 0 0 0 1px currentColor; }
+    input { font: inherit; width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--muted); background: transparent; color: inherit; }
+    ul { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+    li { padding: 3px 0; }
+    .ok::before { content: "✓ "; color: var(--ok); font-weight: 700; }
+    .bad::before { content: "✗ "; color: var(--bad); font-weight: 700; }
+    .info::before { content: "• "; color: var(--muted); }
+    textarea { width: 100%; box-sizing: border-box; min-height: 160px; font: 12px ui-monospace, monospace; }
+  </style>
+</head>
+<body>
+  <h1>Teste do Dropbox no PWA</h1>
+  <p class="lead">Protótipo descartável do iShinyDex (etapa 0). Faça o teste no Safari e depois no app instalado na Tela de Início.</p>
+
+  <section>
+    <h2>1. Onde estou</h2>
+    <ul id="env"></ul>
+  </section>
+
+  <section>
+    <h2>2. Armazenamento</h2>
+    <ul id="storage"></ul>
+  </section>
+
+  <section>
+    <h2>3. Dropbox</h2>
+    <p style="margin:0 0 8px;font-size:14px">App key do app criado no Dropbox (é pública; nunca cole o <i>app secret</i>):</p>
+    <input id="key" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="app key">
+    <div>
+      <button id="connect">Conectar</button>
+      <button id="sync" class="secondary">Testar sync</button>
+      <button id="logout" class="secondary">Esquecer login</button>
+    </div>
+    <ul id="dropbox"></ul>
+  </section>
+
+  <section>
+    <h2>4. Relatório</h2>
+    <button id="copy">Copiar relatório</button>
+    <textarea id="report" readonly hidden></textarea>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
