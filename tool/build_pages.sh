@@ -10,7 +10,8 @@ set -euo pipefail
 
 version="$1"
 base_href="$2"
-out="$3"
+# Absoluta: o build roda de dentro de frontend/.
+out="$(realpath -m "$3")"
 root="$(cd "$(dirname "$0")/.." && pwd)"
 app="$root/frontend"
 
