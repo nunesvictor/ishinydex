@@ -14,8 +14,10 @@ jobs:
     name: Stack completa (docker compose)
     runs-on: ubuntu-latest
     env:
-      # Sem compressão dos sprites: o CI só precisa ver a stack subir.
+      # Sem compressão dos sprites e sem wasm: o CI só precisa ver a stack
+      # subir (o build com wasm é coberto no frontend e no Pages).
       SPRITES_OPTIMIZE: "0"
+      X_WEB_WASM: "false"
     steps:
       - uses: actions/checkout@v5
         with:
@@ -34,11 +36,27 @@ jobs:
       - name: Validar o compose
         run: docker compose config --quiet
 
+      # As imagens do compose, com cache das camadas no GitHub Actions: o SDK
+      # do Flutter, as dependências e os sprites só são refeitos quando mudam.
+      # Um escopo por imagem, para uma não sobrescrever o cache da outra.
+      - uses: docker/setup-buildx-action@v3
+
       - name: Build
-        run: docker compose build
+        uses: docker/bake-action@v6
+        with:
+          source: .
+          files: docker-compose.yml
+          load: true
+          set: |
+            sprites.cache-from=type=gha,scope=sprites
+            sprites.cache-to=type=gha,scope=sprites,mode=max
+            backend.cache-from=type=gha,scope=backend
+            backend.cache-to=type=gha,scope=backend,mode=max
+            frontend.cache-from=type=gha,scope=frontend
+            frontend.cache-to=type=gha,scope=frontend,mode=max
 
       - name: Subir
-        run: docker compose up -d
+        run: docker compose up -d --no-build
 
       - name: App e API respondendo
         run: |
