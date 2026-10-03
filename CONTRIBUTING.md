@@ -53,6 +53,17 @@ o resto vai para Manutenção. Por isso o título do PR segue o padrão
 `tipo: descrição`. O script roda na máquina, e não no CI, porque o token do
 CI de um repositório não cria tags nos outros.
 
+### GitHub Pages
+
+A tag `v*` publica o app em modo demonstração em
+`https://<dono>.github.io/<repositório>/` (workflow **Pages**). O site é
+montado por `tool/build_pages.sh <versão> <base-href> <saída>`, que também
+roda na máquina (com o Flutter no PATH): app na raiz, páginas fixas de
+`site/` junto, e o app carregado de `v/<hash>/` (cache-busting). O script
+falha se algum endereço `github.io` aparecer no código: uma cópia nunca pode
+depender do Pages de outra pessoa. O ambiente `github-pages` aceita publicar
+a partir da `main` e das tags `v*`.
+
 ## Atualizar os submodules
 
 O Dependabot abre os PRs toda semana. Para fazer à mão:
