@@ -59,8 +59,11 @@ build() {
          | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-12)
   mkdir -p "$web/v/$hash"
   mv "$web"/main.dart.* "$web/assets" "$web/v/$hash/"
-  sed -i "s/__BUILD_VERSION__/$hash/" "$web/flutter_bootstrap.js"
+  # O service worker (frontend web/sw.js) usa a mesma versão no nome do
+  # cache.
+  sed -i "s/__BUILD_VERSION__/$hash/" "$web/flutter_bootstrap.js" "$web/sw.js"
   grep -q "'$hash'" "$web/flutter_bootstrap.js"
+  grep -q "'$hash'" "$web/sw.js"
   mkdir -p "$dest"
   cp -r "$web"/. "$dest"/
   echo "$dest: build $hash"
