@@ -71,6 +71,9 @@ services:
       args:
         # Build em WebAssembly nos navegadores Chromium (ver .env.example).
         WEB_WASM: ${X_WEB_WASM:-true}
+        # Versão mostrada em Ajustes; o deploy passa a tag atual:
+        #   X_APP_VERSION=$(git describe --tags) docker compose up -d --build
+        APP_VERSION: ${X_APP_VERSION:-dev}
     image: ishinydex-frontend:latest
     depends_on:
       - backend

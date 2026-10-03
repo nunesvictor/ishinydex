@@ -147,7 +147,7 @@ O `restoredb` substitui o conteúdo do banco atual pelo do backup (`pg_restore
 | Logs | `docker compose logs -f backend` (ou `frontend`, `db`) |
 | Parar tudo | `docker compose stop` (os dados ficam nos volumes) |
 | Subir de novo | `docker compose up -d` |
-| Atualizar para a versão mais nova | `git pull && git submodule update --init --recursive && docker compose up -d --build` |
+| Atualizar para a versão mais nova | `git pull && git submodule update --init --recursive && X_APP_VERSION=$(git describe --tags) docker compose up -d --build` |
 | Backup | `docker compose exec backend python manage.py backupdb` |
 
 Com `restart: unless-stopped`, a stack volta sozinha quando o PC reinicia, a
@@ -157,6 +157,16 @@ menos que tenha sido parada com `docker compose stop`.
 banco.
 
 ### Versões
+
+Cada versão tem uma tag (`v1.0.0`, `v1.1.0`...) e uma página em
+[Releases](https://github.com/nunesvictor/ishinydex/releases) com o que
+mudou. A versão instalada aparece em Ajustes, no fim da tela. Para ficar
+numa versão específica em vez da mais nova:
+
+```sh
+git checkout v1.0.0 && git submodule update --init --recursive
+X_APP_VERSION=$(git describe --tags) docker compose up -d --build
+```
 
 Os submodules apontam para um commit fixo de cada repositório. O Dependabot
 abre um PR por semana atualizando esses commits. Um bump só deve apontar para
