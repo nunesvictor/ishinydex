@@ -189,13 +189,29 @@ async function accessToken() {
   return body.access_token;
 }
 
+/** Corpo da resposta: JSON quando der; senão, o texto (os erros 400 do
+ *  Dropbox vêm em texto puro, com o motivo). */
+async function readBody(res) {
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text;
+  }
+}
+
+function detail(body) {
+  if (!body) return '';
+  return ` — ${typeof body === 'string' ? body : JSON.stringify(body)}`.slice(0, 300);
+}
+
 async function api(token, endpoint, args) {
   const res = await fetch(`https://api.dropboxapi.com/2/${endpoint}`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify(args),
   });
-  return { status: res.status, body: await res.json().catch(() => null) };
+  return { status: res.status, body: await readBody(res) };
 }
 
 async function upload(token, content, rev) {
@@ -207,9 +223,11 @@ async function upload(token, content, rev) {
       'Content-Type': 'application/octet-stream',
       'Dropbox-API-Arg': JSON.stringify({ path: FILE, mode, autorename: false, mute: true }),
     },
-    body: JSON.stringify(content),
+    // Bytes, e não texto: com um corpo string, o WebKit acrescenta
+    // ";charset=UTF-8" ao Content-Type e o Dropbox responde 400.
+    body: new TextEncoder().encode(JSON.stringify(content)),
   });
-  return { status: res.status, body: await res.json().catch(() => null) };
+  return { status: res.status, body: await readBody(res) };
 }
 
 async function download(token) {
@@ -220,7 +238,7 @@ async function download(token) {
       'Dropbox-API-Arg': JSON.stringify({ path: FILE }),
     },
   });
-  return { status: res.status, body: res.ok ? await res.json() : null };
+  return { status: res.status, body: await readBody(res) };
 }
 
 async function testSync() {
@@ -235,14 +253,22 @@ async function testSync() {
     if (rev) {
       const file = await download(token);
       if (file.status === 200) previous = file.body;
-      add('dropbox', file.status === 200 ? 'ok' : 'bad', `Download: ${file.status}, contador ${previous.count}`);
+      add(
+        'dropbox',
+        file.status === 200 ? 'ok' : 'bad',
+        `Download: ${file.status}, contador ${previous.count}${file.status === 200 ? '' : detail(file.body)}`,
+      );
     } else {
       add('dropbox', 'info', 'Arquivo ainda não existe na pasta do app');
     }
 
     const content = { count: previous.count + 1, device: mode(), at: new Date().toISOString() };
     const up = await upload(token, content, rev);
-    add('dropbox', up.status === 200 ? 'ok' : 'bad', `Envio condicional (rev ${rev || 'nova'}): ${up.status}`);
+    add(
+      'dropbox',
+      up.status === 200 ? 'ok' : 'bad',
+      `Envio condicional (rev ${rev || 'nova'}): ${up.status}${up.status === 200 ? '' : detail(up.body)}`,
+    );
 
     if (up.status === 200 && rev) {
       // A rev antiga não vale mais: o Dropbox tem de recusar (conflito).
