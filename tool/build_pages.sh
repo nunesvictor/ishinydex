@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-# Monta o site do GitHub Pages: o app (frontend) em modo demonstração na raiz
-# e as páginas fixas de site/ (como o protótipo /spike/dropbox/).
+# Monta o site do GitHub Pages:
+#   /            o app no modo local (os dados ficam no aparelho; ishinydex#48)
+#   /demo/       a demonstração, com dados de exemplo
+#   /catalog/    o pacote do catálogo, usado pelos dois
+#   + as páginas fixas de site/ (como o protótipo /spike/dropbox/)
 #
 #   tool/build_pages.sh <versão> <base-href> <saída>
 #   tool/build_pages.sh v2.0.0-alpha.1 /ishinydex/ _site
@@ -40,27 +43,38 @@ curl -fsSL -o "$catalog_dir/catalog.json" \
 cd "$app"
 flutter pub get
 dart run build_runner build -d
-flutter build web --release --wasm --base-href "$base_href" "${names[@]}" \
-  --dart-define=USE_FAKE_API=true \
-  --dart-define=CATALOG_URL=catalog/catalog.json \
-  --dart-define=APP_VERSION="$version"
 
-# Cache-busting (frontend#5): no Docker, o nginx serve /v/<hash>/x como /x;
-# aqui não há reescrita, então os arquivos vão de fato para v/<hash>/. O
-# hash é o mesmo cálculo do Dockerfile: código (main.dart.*) e assets.
-web="$app/build/web"
-hash=$({ find "$web" -maxdepth 1 -type f -name 'main.dart.*' -print0
-         find "$web/assets" -type f -print0; } \
-       | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-12)
-mkdir -p "$web/v/$hash"
-mv "$web"/main.dart.* "$web/assets" "$web/v/$hash/"
-sed -i "s/__BUILD_VERSION__/$hash/" "$web/flutter_bootstrap.js"
-grep -q "'$hash'" "$web/flutter_bootstrap.js"
+# Builda o app com o <base-href> e os --dart-define dados e o copia para
+# <destino>. Cache-busting (frontend#5): no Docker, o nginx serve
+# /v/<hash>/x como /x; aqui não há reescrita, então os arquivos vão de fato
+# para v/<hash>/ (o hash é o mesmo cálculo do Dockerfile).
+build() {
+  local base="$1" dest="$2"
+  shift 2
+  flutter build web --release --wasm --base-href "$base" "${names[@]}" \
+    --dart-define=APP_VERSION="$version" "$@"
+  local web="$app/build/web" hash
+  hash=$({ find "$web" -maxdepth 1 -type f -name 'main.dart.*' -print0
+           find "$web/assets" -type f -print0; } \
+         | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-12)
+  mkdir -p "$web/v/$hash"
+  mv "$web"/main.dart.* "$web/assets" "$web/v/$hash/"
+  sed -i "s/__BUILD_VERSION__/$hash/" "$web/flutter_bootstrap.js"
+  grep -q "'$hash'" "$web/flutter_bootstrap.js"
+  mkdir -p "$dest"
+  cp -r "$web"/. "$dest"/
+  echo "$dest: build $hash"
+}
 
 rm -rf "$out"
-mkdir -p "$out"
-cp -r "$web"/. "$out"/
+build "$base_href" "$out" \
+  --dart-define=LOCAL_DATA=true \
+  --dart-define=CATALOG_URL=catalog/catalog.json
+build "${base_href}demo/" "$out/demo" \
+  --dart-define=USE_FAKE_API=true \
+  --dart-define=CATALOG_URL=../catalog/catalog.json
+
 cp -r "$root/site"/. "$out"/
 mkdir -p "$out/catalog"
 cp "$catalog_dir/catalog.json" "$out/catalog/"
-echo "site em $out (versão $version, build $hash, $catalog_version)"
+echo "site em $out (versão $version, $catalog_version)"
