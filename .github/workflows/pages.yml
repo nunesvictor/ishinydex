@@ -1,11 +1,15 @@
-# Publica a pasta site/ no GitHub Pages (https://<dono>.github.io/<repositório>/).
+# Publica no GitHub Pages (https://<dono>.github.io/<repositório>/) o app em
+# modo demonstração, montado por tool/build_pages.sh, mais as páginas fixas
+# de site/ (como o protótipo /spike/dropbox/ da #53).
 #
-# Por enquanto só à mão (Actions → Pages → Run workflow): o site tem uma
-# página provisória e o protótipo da etapa 0 (#53). Na etapa 2 de #48, este
-# workflow passa a buildar o app e a publicar a cada tag de versão (#51).
+# Só versões marcadas (#51): dispara com uma tag v* (criada por
+# tool/release.py) ou à mão (Actions → Pages → Run workflow), nunca a cada
+# merge na main.
 name: Pages
 
 on:
+  push:
+    tags: ["v*"]
   workflow_dispatch:
 
 permissions:
@@ -18,6 +22,10 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  # A mesma versão do CI e do Dockerfile do frontend.
+  FLUTTER_VERSION: 3.47.2
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,9 +34,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          submodules: true
+          # Histórico e tags para o `git describe` de uma execução à mão.
+          fetch-depth: 0
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Montar o site
+        run: |
+          version=$(git describe --tags)
+          tool/build_pages.sh "$version" "/${{ github.event.repository.name }}/" _site
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
