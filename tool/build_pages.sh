@@ -30,11 +30,19 @@ if [[ "$version" =~ ^v?([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
          --build-number="$((major * 10000 + minor * 100 + patch))")
 fi
 
+# Catálogo (etapa 3 de #48): a versão fixada em catalog.version, baixada da
+# release do backend. Só no build: com o app no ar, ele vem do próprio site.
+catalog_version="$(tr -d '[:space:]' < "$root/catalog.version")"
+catalog_dir="$(mktemp -d)"
+curl -fsSL -o "$catalog_dir/catalog.json" \
+  "https://github.com/nunesvictor/ishinydex-backend/releases/download/$catalog_version/catalog.json"
+
 cd "$app"
 flutter pub get
 dart run build_runner build -d
 flutter build web --release --wasm --base-href "$base_href" "${names[@]}" \
   --dart-define=USE_FAKE_API=true \
+  --dart-define=CATALOG_URL=catalog/catalog.json \
   --dart-define=APP_VERSION="$version"
 
 # Cache-busting (frontend#5): no Docker, o nginx serve /v/<hash>/x como /x;
@@ -53,4 +61,6 @@ rm -rf "$out"
 mkdir -p "$out"
 cp -r "$web"/. "$out"/
 cp -r "$root/site"/. "$out"/
-echo "site em $out (versão $version, build $hash)"
+mkdir -p "$out/catalog"
+cp "$catalog_dir/catalog.json" "$out/catalog/"
+echo "site em $out (versão $version, build $hash, $catalog_version)"

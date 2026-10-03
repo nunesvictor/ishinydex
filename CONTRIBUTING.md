@@ -61,7 +61,11 @@ montado por `tool/build_pages.sh <versão> <base-href> <saída>`, que também
 roda na máquina (com o Flutter no PATH): app na raiz, páginas fixas de
 `site/` junto, e o app carregado de `v/<hash>/` (cache-busting). O script
 falha se algum endereço `github.io` aparecer no código: uma cópia nunca pode
-depender do Pages de outra pessoa. O ambiente `github-pages` aceita publicar
+depender do Pages de outra pessoa. O catálogo vai junto, em
+`catalog/catalog.json`: a versão fixada em `catalog.version` é baixada da
+release do backend (só no build) e a demonstração passa a usá-lo
+(`CATALOG_URL`). Para trocar de catálogo, rode o workflow **Catálogo** no
+backend e atualize o `catalog.version` num PR. O ambiente `github-pages` aceita publicar
 a partir da `main` e das tags `v*`.
 
 ## Atualizar os submodules
