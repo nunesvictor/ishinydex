@@ -55,8 +55,9 @@ CI de um repositório não cria tags nos outros.
 
 ### GitHub Pages
 
-A tag `v*` publica o app em modo demonstração em
-`https://<dono>.github.io/<repositório>/` (workflow **Pages**). O site é
+A tag `v*` publica o app em `https://<dono>.github.io/<repositório>/`
+(workflow **Pages**): na raiz, o **modo local** (os dados ficam no aparelho);
+em `/demo/`, a demonstração com dados de exemplo. O site é
 montado por `tool/build_pages.sh <versão> <base-href> <saída>`, que também
 roda na máquina (com o Flutter no PATH): app na raiz, páginas fixas de
 `site/` junto, e o app carregado de `v/<hash>/` (cache-busting). O script
