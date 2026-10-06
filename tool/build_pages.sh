@@ -76,10 +76,19 @@ build() {
 rm -rf "$out"
 build "$base_href" "$out" \
   --dart-define=LOCAL_DATA=true \
-  --dart-define=CATALOG_URL=catalog/catalog.json
+  --dart-define=CATALOG_URL=catalog/catalog.json \
+  --dart-define=DROPBOX_APP_KEY="${DROPBOX_APP_KEY:-}"
 build "${base_href}demo/" "$out/demo" \
   --dart-define=USE_FAKE_API=true \
   --dart-define=CATALOG_URL=../catalog/catalog.json
+
+# Com a App key no ambiente, ela precisa estar no app do modo local (no
+# #71, faltou repassá-la ao build e o Pages saiu sem sync, sem erro).
+if [ -n "${DROPBOX_APP_KEY:-}" ] &&
+  ! grep -rqF --include=main.dart.js --exclude-dir=demo "$DROPBOX_APP_KEY" "$out"; then
+  echo "A DROPBOX_APP_KEY não chegou ao build do modo local." >&2
+  exit 1
+fi
 
 cp -r "$root/site"/. "$out"/
 mkdir -p "$out/catalog"
