@@ -78,8 +78,8 @@ build "$base_href" "$out" \
   --dart-define=LOCAL_DATA=true \
   --dart-define=CATALOG_URL=catalog/catalog.json \
   --dart-define=DROPBOX_APP_KEY="${DROPBOX_APP_KEY:-}"
+# Sem LOCAL_DATA: a demonstração.
 build "${base_href}demo/" "$out/demo" \
-  --dart-define=USE_FAKE_API=true \
   --dart-define=CATALOG_URL=../catalog/catalog.json
 
 # Com a App key no ambiente, ela precisa estar no app do modo local (no

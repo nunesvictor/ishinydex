@@ -4,7 +4,7 @@
   // As pastas backend/ e frontend/ ganham cor no Explorer e nas abas pela
   // extensão Folder Path Color (recomendada abaixo).
   "folders": [
-    // Raiz do repositório (compose, README, CI). Precisa vir junto: a
+    // Raiz do repositório (README, CI, Pages). Precisa vir junto: a
     // extensão de cores monta o caminho a partir dela.
     { "name": "ishinydex", "path": "." },
     { "name": "backend · Django", "path": "backend" },

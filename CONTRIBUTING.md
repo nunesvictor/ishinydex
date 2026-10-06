@@ -4,13 +4,14 @@ O código da aplicação vive em
 [ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend) e
 [ishinydex-frontend](https://github.com/nunesvictor/ishinydex-frontend), cada
 um com o seu fluxo (ver o `CONTRIBUTING.md` de cada). Este repositório só
-**junta os dois**: submodules, `docker-compose.yml`, `.env.example` e CI da
-stack completa.
+**junta os dois**: submodules, a publicação no GitHub Pages, as releases e a
+documentação para quem usa o app.
 
 1. **Issue** descrevendo a mudança (em pt-BR).
 2. **Branch** `<número>-<resumo>`, a partir da `main` atualizada.
-3. **Pull request** com `Closes #<número>`. O CI sobe a stack completa
-   (`docker compose`) e confere o app, a API e o admin.
+3. **Pull request** com `Closes #<número>`. O CI confere se os submodules
+   apontam para commits da `main` de cada repositório e a sintaxe dos
+   scripts.
 4. **Revisão e squash merge** pelo dono do repositório. A branch é apagada
    sozinha.
 
@@ -23,8 +24,7 @@ stack completa.
   nos commits que os submodules apontam na `main` daqui. A release do GitHub
   (com as notas) fica só neste repositório.
 - **A versão vem da tag**, não de arquivo: o build do frontend recebe
-  `APP_VERSION` (no compose, `X_APP_VERSION=$(git describe --tags)`) e a
-  mostra em Ajustes. A versão do `pubspec.yaml` e do `pyproject.toml` não é
+  `APP_VERSION` (no Pages, `git describe --tags`) e a mostra em Ajustes. A versão do `pubspec.yaml` e do `pyproject.toml` não é
   usada.
 - **Versões de dados** (a partir da arquitetura local-first, #48) são
   separadas da versão do app: o arquivo de sync tem um `schemaVersion`
