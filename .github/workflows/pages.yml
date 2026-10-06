@@ -1,6 +1,7 @@
-# Publica no GitHub Pages (https://<dono>.github.io/<repositório>/) o app em
-# modo demonstração, montado por tool/build_pages.sh, mais as páginas fixas
-# de site/ (como o protótipo /spike/dropbox/ da #53).
+# Publica no GitHub Pages (https://<dono>.github.io/<repositório>/) o app,
+# montado por tool/build_pages.sh: o modo local na raiz, a demonstração em
+# /demo/ e as páginas fixas de site/ (a política de privacidade e o
+# protótipo /spike/dropbox/ da #53).
 #
 # Só versões marcadas (#51): dispara com uma tag v* (criada por
 # tool/release.py) ou à mão (Actions → Pages → Run workflow), nunca a cada
