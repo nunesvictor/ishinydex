@@ -9,6 +9,10 @@
 #   tool/build_pages.sh v2.0.0-alpha.1 /ishinydex/ _site
 #
 # Roda no workflow Pages e também na máquina (precisa do Flutter no PATH).
+#
+# DROPBOX_APP_KEY (ambiente, opcional): a App key do app do Dropbox de quem
+# publica. Com ela, o modo local ganha a sincronização (ishinydex#48); sem
+# ela, sai sem. Cada cópia do projeto usa o próprio app do Dropbox.
 set -euo pipefail
 
 version="$1"
