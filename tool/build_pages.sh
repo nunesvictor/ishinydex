@@ -3,7 +3,8 @@
 #   /            o app no modo local (os dados ficam no aparelho; ishinydex#48)
 #   /demo/       a demonstração, com dados de exemplo
 #   /catalog/    o pacote do catálogo, usado pelos dois
-#   + as páginas fixas de site/ (como o protótipo /spike/dropbox/)
+#   + as páginas fixas de site/ (a política de privacidade em /privacidade/
+#     e o protótipo /spike/dropbox/)
 #
 #   tool/build_pages.sh <versão> <base-href> <saída>
 #   tool/build_pages.sh v2.0.0-alpha.1 /ishinydex/ _site
