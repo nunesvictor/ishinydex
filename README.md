@@ -17,6 +17,9 @@ exemplo).
 - **Sincronização opcional com o Dropbox** (Ajustes → Sincronização): os
   mesmos dados em todos os aparelhos, na sua própria conta.
 
+Privacidade: o app não tem servidor nem coleta dados
+([política de privacidade](https://nunesvictor.github.io/ishinydex/privacidade/)).
+
 > Este README ganha um guia completo na etapa 10 de
 > [#48](https://github.com/nunesvictor/ishinydex/issues/48).
 
