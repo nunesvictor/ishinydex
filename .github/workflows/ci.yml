@@ -47,13 +47,16 @@ jobs:
           source: .
           files: docker-compose.yml
           load: true
+          # Só a main exporta o cache (#66): no PR, a exportação custava
+          # minutos e o cache não serve a ninguém depois do squash. Linha
+          # vazia é ignorada; os PRs leem o cache da main.
           set: |
             sprites.cache-from=type=gha,scope=sprites
-            sprites.cache-to=type=gha,scope=sprites,mode=max
+            ${{ github.event_name == 'push' && 'sprites.cache-to=type=gha,scope=sprites,mode=max' || '' }}
             backend.cache-from=type=gha,scope=backend
-            backend.cache-to=type=gha,scope=backend,mode=max
+            ${{ github.event_name == 'push' && 'backend.cache-to=type=gha,scope=backend,mode=max' || '' }}
             frontend.cache-from=type=gha,scope=frontend
-            frontend.cache-to=type=gha,scope=frontend,mode=max
+            ${{ github.event_name == 'push' && 'frontend.cache-to=type=gha,scope=frontend,mode=max' || '' }}
 
       - name: Subir
         run: docker compose up -d --no-build
