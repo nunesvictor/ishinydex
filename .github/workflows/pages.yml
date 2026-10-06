@@ -46,6 +46,9 @@ jobs:
           cache: true
 
       - name: Montar o site
+        env:
+          # Variável do repositório (pública); vazia, o app sai sem sync.
+          DROPBOX_APP_KEY: ${{ vars.DROPBOX_APP_KEY }}
         run: |
           version=$(git describe --tags)
           tool/build_pages.sh "$version" "/${{ github.event.repository.name }}/" _site
