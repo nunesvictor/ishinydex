@@ -15,6 +15,24 @@ documentação para quem usa o app.
 4. **Revisão e squash merge** pelo dono do repositório. A branch é apagada
    sozinha.
 
+## GitGuardian
+
+O [GitGuardian](https://www.gitguardian.com/) é um app do GitHub que procura
+segredos em cada push dos três repositórios, e o check dele
+("GitGuardian Security Checks") é obrigatório na `main`. Se o serviço ficar
+lento, o dono pode suspender a obrigatoriedade por um tempo:
+
+```sh
+tool/gitguardian.py status
+tool/gitguardian.py suspend --motivo "o que aconteceu"
+tool/gitguardian.py resume   # volta ao padrão
+```
+
+O app continua rodando e reportando; só deixa de bloquear o merge. A
+suspensão fica registrada na variável `GITGUARDIAN` de cada repositório
+(`ativo` é o padrão), e a CI dos três avisa em cada execução enquanto ela
+durar.
+
 ## Versões e releases
 
 - **SemVer** com `v`: `vMAJOR.MINOR.PATCH`. MINOR para funcionalidades,

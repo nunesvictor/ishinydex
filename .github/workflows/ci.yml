@@ -16,9 +16,20 @@ jobs:
     name: Submodules e scripts
     runs-on: ubuntu-latest
     steps:
+      # GitGuardian suspenso como check obrigatório (tool/gitguardian.py): um
+      # aviso em cada execução, até alguém rodar o `resume`.
+      - name: Aviso do GitGuardian
+        if: vars.GITGUARDIAN != '' && vars.GITGUARDIAN != 'ativo'
+        env:
+          STATE: ${{ vars.GITGUARDIAN }}
+        run: echo "::warning title=GitGuardian suspenso::$STATE. Para reativar, tool/gitguardian.py resume."
+
+      # Histórico completo (também dos submodules): com o raso, um commit que
+      # não é mais o topo da main de um submodule parece estar fora dela.
       - uses: actions/checkout@v5
         with:
           submodules: true
+          fetch-depth: 0
 
       # Os submodules só apontam para commits da main de cada repositório:
       # o commit de um PR fica órfão depois do squash merge.
@@ -35,4 +46,4 @@ jobs:
       - name: Scripts
         run: |
           bash -n tool/build_pages.sh
-          python3 -m py_compile tool/release.py
+          python3 -m py_compile tool/release.py tool/gitguardian.py
