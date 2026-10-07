@@ -24,9 +24,12 @@ jobs:
           STATE: ${{ vars.GITGUARDIAN }}
         run: echo "::warning title=GitGuardian suspenso::$STATE. Para reativar, tool/gitguardian.py resume."
 
+      # Histórico completo (também dos submodules): com o raso, um commit que
+      # não é mais o topo da main de um submodule parece estar fora dela.
       - uses: actions/checkout@v5
         with:
           submodules: true
+          fetch-depth: 0
 
       # Os submodules só apontam para commits da main de cada repositório:
       # o commit de um PR fica órfão depois do squash merge.
