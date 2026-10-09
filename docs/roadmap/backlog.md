@@ -2,7 +2,7 @@
 
 Tudo que queremos fazer e ainda não tem versão. Cada item tem uma issue na milestone **Backlog** do repositório onde o trabalho começa. Ao planejar uma versão, escolhemos itens daqui: a issue vai para a milestone da versão, o item sai desta lista e entra no plano `vX.Y.Z.md`.
 
-Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, detalhes e estimativa ficam para quando ela for escolhida.
+Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, detalhes e estimativa ficam para quando ela for escolhida; ideia já planejada guarda o plano em `ideias/`.
 
 ## Interface
 | Ideia | Issue | Notas |
@@ -14,6 +14,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Dados e catálogo
 | Ideia | Issue | Notas |
 | --- | --- | --- |
+| Registro de caçadas: método, contagem, início e post no espécime; caçadas em andamento com contador, cronômetro e pausadas | [backend#103](https://github.com/nunesvictor/ishinydex-backend/issues/103), [frontend#163](https://github.com/nunesvictor/ishinydex-frontend/issues/163), [frontend#164](https://github.com/nunesvictor/ishinydex-frontend/issues/164) | [Plano](ideias/registro-de-cacadas.md). Backend → #163 → #164. Muda o arquivo de dados para o schema 2. |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). |
 
 ## Plataforma e documentação
