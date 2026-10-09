@@ -15,7 +15,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Dados e catálogo
 | Ideia | Issue | Notas |
 | --- | --- | --- |
-| Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). |
+| Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). Inclui decidir a marca "Já visitou o Champions" depois da visita, como no HOME ([frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174)). |
 
 ## Plataforma e documentação
 | Ideia | Issue | Notas |
