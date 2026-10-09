@@ -15,10 +15,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Dados e catálogo
 | Ideia | Issue | Notas |
 | --- | --- | --- |
-| Registro de caçadas: método, contagem, início e post no espécime; caçadas em andamento com contador, cronômetro e pausadas | [backend#103](https://github.com/nunesvictor/ishinydex-backend/issues/103), [frontend#163](https://github.com/nunesvictor/ishinydex-frontend/issues/163), [frontend#164](https://github.com/nunesvictor/ishinydex-frontend/issues/164) | [Plano](ideias/registro-de-cacadas.md). Backend → #163 → #164. Muda o arquivo de dados para o schema 2. |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). |
-| Espécime visitando o Pokémon Champions (não pode ir para save enquanto visita) | [frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174) | O Champions não é save nem jogo de origem: o Pokémon fica no HOME. Campo novo no arquivo; avaliar junto com o schema 2 da #163. |
-| Restrições de transferência do HOME: formas fundidas/parceiras, Spinda e Nincada no BDSP, limites do GO | [frontend#175](https://github.com/nunesvictor/ishinydex-frontend/issues/175) | Notas do gráfico de transferências do r/PokemonHOME. Bloqueios onde o HOME recusa, avisos onde o app não tem como saber. |
 
 ## Plataforma e documentação
 | Ideia | Issue | Notas |
