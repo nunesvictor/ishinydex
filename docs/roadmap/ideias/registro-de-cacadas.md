@@ -43,7 +43,8 @@ Duas partes, que podem sair em versões diferentes: **A** = registro no espécim
   - "Caçadas" ganha os segmentos "Faltam | Em andamento (n) | Pausadas (n)".
   - Começar: botão "Começar caçada" num item do que falta (já sabe a forma e, pelo filtro de jogo, o jogo/save), na ficha da forma/detalhe do espécime e na aba Em andamento (escolhe a forma com o `form_picker.dart`). Escolhe jogo/save, método e unidade (mesmo catálogo `shinyMethods`); data de início com hoje sugerido.
   - Cartão da caçada: sprite, método, duração (se houver início), contagem grande com **+1** (alvo de toque grande, mobile first), −1 e tocar no número para digitar; em horas, iniciar/parar o cronômetro. Menu: editar, "Encontrei!", desistir.
-- Mocks no canvas (Caçadas com os três segmentos, cartão no iPhone e no PC, começar caçada, pausadas) antes de implementar.
+- **Indicação no slot da box:** o slot mostra um selo de "caçada em andamento" quando existe caçada **ativa** (as pausadas não contam) da mesma forma do slot e o slot ainda precisa dela: vazio (faltando) em qualquer dex, ou preenchido com um não shiny num dex shiny. Slot já resolvido (shiny no dex shiny, qualquer espécime no dex normal) não mostra nada. Tocar no selo (ou no detalhe do slot) leva ao cartão da caçada. O desenho do selo (canto do slot, sem esconder sprite nem os indicadores atuais) sai no mock; precisa ser legível no slot pequeno do iPhone.
+- Mocks no canvas (Caçadas com os três segmentos, cartão no iPhone e no PC, começar caçada, pausadas, selo no slot da box) antes de implementar.
 
 ## Quando for implementar
 - Ordem: backend (curadoria + release do catálogo no lote) → mocks → frontend A → frontend B.
@@ -52,4 +53,4 @@ Duas partes, que podem sair em versões diferentes: **A** = registro no espécim
 
 ## Verificação
 - Backend: testes do `shiny_methods.json` (ids únicos, unidades e versões válidas) e do `exportcatalog`.
-- Frontend: `flutter analyze`, `flutter test`, 100% de cobertura; testes de: filtro de métodos pelo OT, validações, ida e volta dos campos nos `records`, recusa do arquivo schema 2 num `LocalStore` que só lê o 1, leitura do arquivo 1 pelo app novo; B: +1/−1, aviso ao trocar a data de início, desistir → pausada → retomar/excluir, cadastro direto fechando a caçada aberta, cronômetro com relógio falso (iniciar, fechar e reabrir, parar, só um rodando), "Encontrei!" preenchendo o formulário e apagando a caçada, ida e volta de `shinyHunts` nos `records` e no sync; telas em `compactSize`/`expandedSize`.
+- Frontend: `flutter analyze`, `flutter test`, 100% de cobertura; testes de: filtro de métodos pelo OT, validações, ida e volta dos campos nos `records`, recusa do arquivo schema 2 num `LocalStore` que só lê o 1, leitura do arquivo 1 pelo app novo; B: +1/−1, aviso ao trocar a data de início, desistir → pausada → retomar/excluir, cadastro direto fechando a caçada aberta, selo no slot (vazio, não shiny em dex shiny, resolvido, caçada pausada), cronômetro com relógio falso (iniciar, fechar e reabrir, parar, só um rodando), "Encontrei!" preenchendo o formulário e apagando a caçada, ida e volta de `shinyHunts` nos `records` e no sync; telas em `compactSize`/`expandedSize`.
