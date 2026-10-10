@@ -11,6 +11,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Internacionalização da interface: en-US padrão e pt-BR completo | [backend#105](https://github.com/nunesvictor/ishinydex-backend/issues/105), [frontend#178](https://github.com/nunesvictor/ishinydex-frontend/issues/178), [#101](https://github.com/nunesvictor/ishinydex/issues/101) | [Plano](ideias/internacionalizacao.md). Backend → frontend. Docs, issues e PRs seguem em pt-BR. |
 | Fluxo de PersonalDex personalizado | [frontend#34](https://github.com/nunesvictor/ishinydex-frontend/issues/34) | |
 | Golpes com nomes em inglês | [frontend#36](https://github.com/nunesvictor/ishinydex-frontend/issues/36) | |
+| Deslizar no painel do slot navega pela box | [frontend#185](https://github.com/nunesvictor/ishinydex-frontend/issues/185) | Na ordem da grade, sem os slots livres. Nas bordas, passa para a box vizinha, com um balão discreto no topo do painel. Mocks aprovados. |
 
 ## Dados e catálogo
 | Ideia | Issue | Notas |
