@@ -4,9 +4,12 @@
 # pre-commit para o backend. Na máquina local não é preciso (lá vale o
 # docker compose do backend).
 #
-# Uso: colar no "Setup script" do ambiente da nuvem (Configurações do
-# projeto → Cloud environment → engrenagem) ou rodar numa sessão:
-#   bash ishinydex/tool/cloud_setup.sh
+# Uso: no "Setup script" do ambiente da nuvem (claude.ai/code → nome do
+# ambiente → engrenagem), só a linha abaixo, que baixa o script da main.
+# Colado inteiro, a indentação pode quebrá-lo; e, com o `|| echo`, uma
+# falha não impede a sessão de abrir (ela só começa sem o ambiente pronto):
+#   curl -fsSL https://raw.githubusercontent.com/nunesvictor/ishinydex/main/tool/cloud_setup.sh | bash || echo "cloud_setup falhou; a sessão segue sem o ambiente"
+# Ou numa sessão: bash ishinydex/tool/cloud_setup.sh
 # Idempotente: o que já existe é reaproveitado.
 set -euo pipefail
 
@@ -61,12 +64,8 @@ if [ -f "$backend/pyproject.toml" ]; then
   POETRY_VIRTUALENVS_CREATE=true POETRY_VIRTUALENVS_IN_PROJECT=true \
     poetry install -q --no-root
   if [ ! -f src/.env ]; then
-    cat > src/.env <<EOF
-POSTGRES_HOST=localhost
-POSTGRES_PASSWORD=$(openssl rand -hex 16)
-SECRET_KEY=$(openssl rand -hex 32)
-DEBUG=True
-EOF
+    printf 'POSTGRES_HOST=localhost\nPOSTGRES_PASSWORD=%s\nSECRET_KEY=%s\nDEBUG=True\n' \
+      "$(openssl rand -hex 16)" "$(openssl rand -hex 32)" > src/.env
   fi
   .venv/bin/pre-commit install-hooks >/dev/null
 fi
