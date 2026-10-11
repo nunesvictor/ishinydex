@@ -7,6 +7,12 @@
 # tool/release.py) ou à mão (Actions → Pages → Run workflow), nunca a cada
 # merge na main. À mão dá para escolher o que publicar (uma tag, por
 # exemplo, para republicar uma versão).
+#
+# O Pages identifica cada publicação pelo commit do workflow (github.sha):
+# uma segunda publicação do mesmo commit é ignorada, mesmo com o workflow
+# verde (#115). Por isso, não publicar à mão o commit que vai receber a tag;
+# se acontecer, republicar à mão a partir da main com um commit mais novo
+# e ref = a tag.
 name: Pages
 
 on:
@@ -67,9 +73,3 @@ jobs:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
-        env:
-          # O Pages identifica cada publicação por este valor (o padrão é o
-          # commit). Duas publicações do mesmo commit, como uma à mão e logo
-          # depois a da tag, viram uma só e a segunda não troca o site; por
-          # isso cada execução ganha a sua.
-          GITHUB_SHA: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
