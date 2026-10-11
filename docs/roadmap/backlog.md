@@ -16,7 +16,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Ideia | Issue | Notas |
 | --- | --- | --- |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). Inclui decidir a marca "Já visitou o Champions" depois da visita, como no HOME ([frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174)). |
-| Caçadas nos jogos da Gen V e anteriores (só de ida, pelo Bank) | [backend#107](https://github.com/nunesvictor/ishinydex-backend/issues/107) | [Plano](ideias/cacadas-jogos-antigos.md), fases 2 (V e IV) e 3 (III e Virtual Console). A fase 1 (VII e VI) e o save só de ida entram na [v2.7.0](v2.7.0.md). Abrir issues novas das fases ao fechar a v2.7.0. |
+| Caçadas nos jogos da Gen V e anteriores (só de ida, pelo Bank) | a abrir | [Plano](ideias/cacadas-jogos-antigos.md), fases 2 (V e IV) e 3 (III e Virtual Console). A fase 1 (VII e VI) e o save só de ida entram na [v2.7.0](v2.7.0.md). Abrir issues novas das fases ao fechar a v2.7.0. |
 
 ## Plataforma e documentação
 | Ideia | Issue | Notas |
