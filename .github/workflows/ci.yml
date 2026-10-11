@@ -46,4 +46,5 @@ jobs:
       - name: Scripts
         run: |
           bash -n tool/build_pages.sh
+          bash -n tool/cloud_setup.sh
           python3 -m py_compile tool/release.py tool/gitguardian.py

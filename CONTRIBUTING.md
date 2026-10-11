@@ -62,14 +62,23 @@ tool/release.py v1.1.0 --dry-run   # confere e mostra as notas
 tool/release.py v1.1.0             # tags nos três repositórios + release
 ```
 
+Sem a máquina, a mesma coisa pelo GitHub: **Actions → Release → Run
+workflow**, com a `tag` e `dry_run` marcado (as notas saem no log); depois
+de novo, sem o `dry_run`. O workflow roda o mesmo `tool/release.py` com o
+secret `RELEASE_TOKEN`: um *fine-grained personal access token* com acesso
+só aos três repositórios e a permissão **Contents: read and write** (o
+token do Actions de um repositório não cria tags nos outros). Quando ele
+vencer, o workflow avisa que falta o token; a release pela máquina continua
+funcionando.
+
 O script recusa a release se este repositório não estiver na `origin/main`,
 se um submodule apontar para um commit fora da `main` dele ou se a tag já
 existir. As notas juntam os PRs dos três repositórios desde a release
 anterior (a última versão final, para uma versão final), agrupados pelo
 prefixo do título: `feat` → Novidades, `fix` → Correções, `perf`, `docs`;
 o resto vai para Manutenção. Por isso o título do PR segue o padrão
-`tipo: descrição`. O script roda na máquina, e não no CI, porque o token do
-CI de um repositório não cria tags nos outros.
+`tipo: descrição`. No CI, ele só roda com o `RELEASE_TOKEN`, porque o token
+do CI de um repositório não cria tags nos outros.
 
 ### GitHub Pages
 
