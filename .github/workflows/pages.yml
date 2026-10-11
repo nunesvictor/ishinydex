@@ -5,13 +5,19 @@
 #
 # Só versões marcadas (#51): dispara com uma tag v* (criada por
 # tool/release.py) ou à mão (Actions → Pages → Run workflow), nunca a cada
-# merge na main.
+# merge na main. À mão dá para escolher o que publicar (uma tag, por
+# exemplo, para republicar uma versão).
 name: Pages
 
 on:
   push:
     tags: ["v*"]
   workflow_dispatch:
+    inputs:
+      ref:
+        description: "Tag, branch ou commit a publicar (vazio: o escolhido acima)"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -36,6 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
+          ref: ${{ inputs.ref || github.ref }}
           submodules: true
           # Histórico e tags para o `git describe` de uma execução à mão.
           fetch-depth: 0
@@ -60,3 +67,9 @@ jobs:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
+        env:
+          # O Pages identifica cada publicação por este valor (o padrão é o
+          # commit). Duas publicações do mesmo commit, como uma à mão e logo
+          # depois a da tag, viram uma só e a segunda não troca o site; por
+          # isso cada execução ganha a sua.
+          GITHUB_SHA: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
