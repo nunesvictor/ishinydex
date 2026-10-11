@@ -17,6 +17,9 @@ PYTHON_VERSION=3.14
 FLUTTER_HOME=/opt/flutter
 # Onde a nuvem clona os repositórios, lado a lado.
 REPOS=${REPOS:-/home/user}
+# O uv e o poetry da imagem ficam em ~/.local/bin, que só entra no PATH pelo
+# .bashrc/.profile; o Setup script roda num bash sem login e não os acharia.
+export PATH="$HOME/.local/bin:$PATH"
 
 # Flutter: o pacote oficial (storage.googleapis.com) em vez de um clone do
 # repositório, que o proxy da nuvem não libera.
