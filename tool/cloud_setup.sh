@@ -13,6 +13,10 @@
 # Idempotente: o que já existe é reaproveitado.
 set -euo pipefail
 
+# O Setup script roda num bash sem login, sem o PATH do .bashrc: o uv e o
+# poetry da imagem ficam em ~/.local/bin.
+export PATH="$HOME/.local/bin:$PATH"
+
 # As mesmas versões da CI (FLUTTER_VERSION nos workflows, PYTHON_VERSION no
 # backend). O Postgres é o do sistema (16; a CI usa o 17).
 FLUTTER_VERSION=3.47.2
