@@ -1,0 +1,63 @@
+# Cria uma release pelo GitHub, sem a máquina do dono: roda o mesmo
+# tool/release.py (tags nos três repositórios + a release daqui), que também
+# continua rodando na máquina.
+#
+# O token do Actions de um repositório não cria tags nos outros dois, por
+# isso o workflow usa o secret RELEASE_TOKEN: um fine-grained PAT com
+# "Contents: read and write" em ishinydex, ishinydex-backend e
+# ishinydex-frontend. Uma tag criada com ele dispara o Pages (com o token do
+# Actions, não dispararia).
+#
+# Primeiro com "dry_run" (confere e mostra as notas no log), depois sem.
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Versão (ex.: v2.8.0 ou v2.8.0-beta.1)"
+        required: true
+      dry_run:
+        description: "Só conferir e mostrar as notas, sem criar nada"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir o token
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Falta o secret RELEASE_TOKEN (ver o comentário no topo de release.yml)."
+            exit 1
+          fi
+
+      # Sempre a main: o script recusa outro commit. Sem guardar o token do
+      # Actions no git, para o push das tags usar o RELEASE_TOKEN (pelo gh).
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          submodules: true
+          fetch-depth: 0
+          persist-credentials: false
+
+      # Autor das tags anotadas.
+      - run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          TAG: ${{ inputs.tag }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: tool/release.py "$TAG" $DRY_RUN
