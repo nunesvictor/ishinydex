@@ -73,3 +73,22 @@ jobs:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # O deploy pode ficar verde sem trocar o site (#115). Confere se o
+      # sw.js publicado é o deste build (o hash do build vai nele). Repete
+      # por até 12 min, o tempo do cache do Pages; o parâmetro na URL pede
+      # uma cópia nova.
+      - name: Conferir o site publicado
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          url="${PAGE_URL%/}/sw.js"
+          for _ in $(seq 24); do
+            if curl -fsSL "$url?run=$GITHUB_RUN_ID-$RANDOM" | cmp -s - _site/sw.js; then
+              echo "Publicado: $url é o deste build."
+              exit 0
+            fi
+            sleep 30
+          done
+          echo "::error::$url não é o deste build: o Pages não trocou o site (ver #115)."
+          exit 1
