@@ -11,13 +11,12 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Internacionalização da interface: en-US padrão e pt-BR completo | [backend#105](https://github.com/nunesvictor/ishinydex-backend/issues/105), [frontend#178](https://github.com/nunesvictor/ishinydex-frontend/issues/178), [#101](https://github.com/nunesvictor/ishinydex/issues/101) | [Plano](ideias/internacionalizacao.md). Backend → frontend. Docs, issues e PRs seguem em pt-BR. |
 | Fluxo de PersonalDex personalizado | [frontend#34](https://github.com/nunesvictor/ishinydex-frontend/issues/34) | |
 | Golpes com nomes em inglês | [frontend#36](https://github.com/nunesvictor/ishinydex-frontend/issues/36) | |
-| Deslizar no painel do slot navega pela box | [frontend#185](https://github.com/nunesvictor/ishinydex-frontend/issues/185) | Na ordem da grade, sem os slots livres. Nas bordas, passa para a box vizinha, com um balão discreto no topo do painel. Mocks aprovados. |
 
 ## Dados e catálogo
 | Ideia | Issue | Notas |
 | --- | --- | --- |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). Inclui decidir a marca "Já visitou o Champions" depois da visita, como no HOME ([frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174)). |
-| Caçadas nos jogos da Gen VII e anteriores (só de ida, pelo Bank) | [backend#107](https://github.com/nunesvictor/ishinydex-backend/issues/107), [frontend#186](https://github.com/nunesvictor/ishinydex-frontend/issues/186), [frontend#187](https://github.com/nunesvictor/ishinydex-frontend/issues/187) | [Plano](ideias/cacadas-jogos-antigos.md). Save só de ida (corrige também o FRLG). Fases: VII e VI; V e IV; III e Virtual Console. Backend → frontend. |
+| Caçadas nos jogos da Gen V e anteriores (só de ida, pelo Bank) | a abrir | [Plano](ideias/cacadas-jogos-antigos.md), fases 2 (V e IV) e 3 (III e Virtual Console). A fase 1 (VII e VI) e o save só de ida entram na [v2.7.0](v2.7.0.md). Abrir issues novas das fases ao fechar a v2.7.0. |
 
 ## Plataforma e documentação
 | Ideia | Issue | Notas |
