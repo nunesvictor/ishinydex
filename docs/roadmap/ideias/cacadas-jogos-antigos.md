@@ -58,9 +58,11 @@ A fase 1 é a que mais pesa no frontend, e as fases 2 e 3 são quase só dados n
 ## Issues
 | Parte | Issue |
 | --- | --- |
-| Jogos no catálogo (entra primeiro) | [backend#107](https://github.com/nunesvictor/ishinydex-backend/issues/107) |
+| Fase 1: jogos no catálogo (entra primeiro) | [backend#107](https://github.com/nunesvictor/ishinydex-backend/issues/107) |
 | Save só de ida | [frontend#186](https://github.com/nunesvictor/ishinydex-frontend/issues/186) |
 | Marcas, nomes e ícones | [frontend#187](https://github.com/nunesvictor/ishinydex-frontend/issues/187) |
+| Fase 2 (Gen V e IV) | [backend#111](https://github.com/nunesvictor/ishinydex-backend/issues/111), [frontend#199](https://github.com/nunesvictor/ishinydex-frontend/issues/199) |
+| Fase 3 (Gen III e VC) | [backend#112](https://github.com/nunesvictor/ishinydex-backend/issues/112), [frontend#200](https://github.com/nunesvictor/ishinydex-frontend/issues/200) |
 
 ## Verificação
 - Backend: testes dos JSON curados (ids, versões e formas válidos) e do `exportcatalog`, gerando as pokédex e os exclusivos dos jogos novos.
