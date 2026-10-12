@@ -56,7 +56,11 @@ dart run build_runner build -d
 build() {
   local base="$1" dest="$2"
   shift 2
-  flutter build web --release --wasm --base-href "$base" "${names[@]}" \
+  # --no-web-resources-cdn: o motor (canvaskit/, skwasm) vai junto no site em
+  # vez de vir do www.gstatic.com. De outro endereço, o service worker não o
+  # guarda, e offline o app ficava parado no splash.
+  flutter build web --release --wasm --no-web-resources-cdn \
+    --base-href "$base" "${names[@]}" \
     --dart-define=APP_VERSION="$version" "$@"
   local web="$app/build/web" hash
   hash=$({ find "$web" -maxdepth 1 -type f -name 'main.dart.*' -print0
@@ -69,6 +73,7 @@ build() {
   sed -i "s/__BUILD_VERSION__/$hash/" "$web/flutter_bootstrap.js" "$web/sw.js"
   grep -q "'$hash'" "$web/flutter_bootstrap.js"
   grep -q "'$hash'" "$web/sw.js"
+  grep -qF '"useLocalCanvasKit":true' "$web/flutter_bootstrap.js"
   mkdir -p "$dest"
   cp -r "$web"/. "$dest"/
   echo "$dest: build $hash"
