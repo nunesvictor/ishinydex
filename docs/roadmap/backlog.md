@@ -17,7 +17,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Dados e catálogo
 | Ideia | Issue | Notas |
 | --- | --- | --- |
-| Gerenciar arquivos de save (Virtual Console e backups do Checkpoint) | [frontend#225](https://github.com/nunesvictor/ishinydex-frontend/issues/225) | Ler (só leitura, no aparelho) a party e as boxes dos arquivos de save, para conferir espécimes e preencher o "Encontrei!". Vale para jogos que não chegam ao HOME: saves e caçadas não dependem disso. |
+| Gerenciar arquivos de save (Virtual Console e backups do Checkpoint) | [frontend#225](https://github.com/nunesvictor/ishinydex-frontend/issues/225) | [Análise de viabilidade](ideias/arquivos-de-save.md): ≈ 2,5× a v2.9.0 em fases; decidir identidade do espécime e licença antes. Ler (só leitura, no aparelho) a party e as boxes dos arquivos de save, para conferir espécimes e preencher o "Encontrei!". Vale para jogos que não chegam ao HOME: saves e caçadas não dependem disso. |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). Inclui decidir a marca "Já visitou o Champions" depois da visita, como no HOME ([frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174)). |
 
 ## Plataforma e documentação
