@@ -2,7 +2,7 @@
 
 Issues: [backend#113](https://github.com/nunesvictor/ishinydex-backend/issues/113) (o `shiny_odds.json`), [frontend#220](https://github.com/nunesvictor/ishinydex-frontend/issues/220) (Charm no save) e [frontend#221](https://github.com/nunesvictor/ishinydex-frontend/issues/221) (odds na caçada). Plano: [v2.9.0](../v2.9.0.md).
 
-As regras de cada par método × jogo de save, para revisão **antes** do código. Fonte principal: Bulbapedia, consultada em 2026-10-13. As páginas usadas estão em [Fontes](#fontes). O que não tem fonte segura está marcado como **⚠ a confirmar** e reunido em [Pontos para decidir](#pontos-para-decidir).
+As regras de cada par método × jogo de save, para revisão **antes** do código. Fonte principal: Bulbapedia, consultada em 2026-10-13. Onde ela não bastava, Serebii e Rotom Labs, conferidos com PokémonDB e IGN. As páginas usadas estão em [Fontes](#fontes), e as decisões tomadas na revisão, em [Decisões](#decisões).
 
 ## Como ler
 
@@ -66,7 +66,7 @@ As regras de cada par método × jogo de save, para revisão **antes** do códig
 | Pesca em cadeia | sorteios + cadeia | como no XY | +2 |
 | DexNav | DexNav | ver abaixo | +2 checagens e +2 sorteios |
 
-**Pesca em cadeia no ORAS.** A Bulbapedia descreve a pesca em cadeia na Gen VI inteira, mas o `shiny_methods.json` só tem o método para `x` e `y`. **Proposta:** incluir `omega-ruby` e `alpha-sapphire` no método (backend#113).
+**Pesca em cadeia no ORAS.** A Bulbapedia descreve a pesca em cadeia na Gen VI inteira, mas o `shiny_methods.json` só tem o método para `x` e `y`. **Decisão:** incluir `omega-ruby` e `alpha-sapphire` no método (backend#113).
 
 **DexNav (Pokémon escondido):**
 - **Chance forçada (*p*):** sai do Search Level (*L*). O valor-base cresce 6 por nível até o 100, 2 por nível do 101 ao 200 e 1 por nível acima disso. *p* = ⌈base/100⌉ / 10000.
@@ -88,7 +88,7 @@ Exemplos, como 1/x:
 | 200 | 853 | 236 | 122 | 82 | 307 | 70 |
 | 999 | 476 | 122 | 62 | 42 | 173 | 36 |
 
-- O Search Level é a quantidade de vezes que a espécie foi vista, e sobe 1 a cada encontro. **Proposta:**
+- O Search Level é a quantidade de vezes que a espécie foi vista, e sobe 1 a cada encontro. **Decisão:**
   - o usuário informa o nível ao começar;
   - cada +1 da caçada soma 1 ao nível;
   - o −1 desfaz;
@@ -105,7 +105,7 @@ Exemplos, como 1/x:
 | Ovos | sorteios | 1 | +2 |
 | Masuda | sorteios | 6 | +2 (8) |
 | Corrente SOS | sorteios + cadeia | 0–10: 1 · 11–20: 5 · 21–30: 9 · 31+: 13 | +2 (31+: 15 → 1/273,53) |
-| Ultra Wormhole (só USUM) | chance | ver abaixo | ⚠ a confirmar |
+| Ultra Wormhole (só USUM) | chance | ver abaixo | não muda a tabela; lendários e UBs +2 |
 
 - **SOS no Sun/Moon:** a cadeia volta a 0 depois de 255 (estouro de 8 bits). No app, o +1 que passa de 255 zera a cadeia atual sozinho, mas só no SM. No USUM não há limite.
 - **Ultra Wormhole (USUM):** a chance vem dos anéis do buraco e da distância. Os modificadores são "Anéis" (0, 1 ou 2) e "Distância" (faixas de 500 anos-luz).
@@ -124,19 +124,21 @@ Exemplos, como 1/x:
   | 5000+ | 1% | 10% | 19% |
 
   - O buraco de 3 anéis (16% a 36%) traz sempre lendário, que não tem a chance aumentada.
-  - Lendários e Ultra Beasts usam a chance normal. **Proposta:** essas formas ficam com 1 sorteio, o Charm ⚠ a confirmar.
+  - Lendários e Ultra Beasts usam a chance normal de encontro estático: 1 sorteio, +2 com o Charm (1/1365,67) (Rotom Labs).
+  - Nenhuma fonte diz que o Charm muda a tabela dos outros Pokémon. A Serebii e o guia da Rotom Labs não citam o Charm, e a resposta do PokémonDB que fala em "metade sem o Charm" é uma estimativa do autor, sem fonte. **Decisão:** a tabela vale como está, e o cartão mostra "o Charm não muda essa chance".
 
 ### Let's Go, Pikachu! / Eevee!
 
 | Método | Tipo | Regra | Charm |
 |---|---|---|---|
 | Encontro aleatório | sorteios | 1; Lure +1 | +2 |
-| Soft reset | sorteios | 1 | ⚠ a confirmar (proposta: +2) |
+| Soft reset | sorteios | 1 | +2 (aves lendárias, Mewtwo, Snorlax) |
 | Combo de captura | sorteios + cadeia | combo 0–10: 1 · 11–20: 4 · 21–30: 8 · 31+: 12; Lure +1 | +2 (31+ com Lure: 15 → 1/273,53) |
 
 - O **Lure** é um modificador sim/não.
 - O bônus do combo só vale para o **próximo** Pokémon da espécie da cadeia. O app conta os encontros da espécie, que é o caso normal da caçada.
-- Trocas e presentes não recebem nenhum bônus. Eles caem em "Soft reset" e só têm odds se a forma não for travada.
+- **Estáticos:** o Charm vale, mas Lure e combo não (Rotom Labs: "Only the Shiny Charm gives a boost", 1/1365,67). Smogon e Dexerto falam do Mewtwo do mesmo jeito.
+- Trocas e presentes não recebem nenhum bônus (Serebii). Eles caem em "Soft reset" e só têm odds se a forma não for travada.
 
 ### Sword / Shield
 
@@ -156,7 +158,7 @@ Exemplos, como 1/x:
   | Sorteios a mais | +1 | +2 | +3 | +4 | +5 | +6 |
   | Odds (sem / com Charm) | 1/2048 · 1/1024 | 1/1366 · 1/820 | 1/1024 · 1/683 | 1/820 · 1/586 | 1/683 · 1/512 | 1/586 · 1/456 |
 
-  A aura aparece em 1,5% a 3% dos encontros, conforme os derrotados. Ver [Pontos para decidir](#pontos-para-decidir), item 1.
+  A aura aparece em 1,5% a 3% dos encontros, conforme os derrotados. Ver [Decisões](#decisões), item 1.
 - **Ovos:**
   - Com o Charm e sem Masuda, o bug pula o sorteio inicial: são 2 sorteios (1/2048), não 3.
   - Com Masuda, ficam 6 sorteios; com Masuda e Charm, 8.
@@ -177,10 +179,16 @@ Exemplos, como 1/x:
 |---|---|---|---|
 | Encontro aleatório | sorteios | 1 | **não vale** (no BDSP o Charm só vale para ovos) |
 | Soft reset | sorteios | 1 | não vale |
-| Ovos | sorteios | 1 | ⚠ +2 (proposta) |
-| Masuda | sorteios | 6 | ⚠ +2 (8, proposta) |
+| Ovos | sorteios | 1 | **+1** (2, o mesmo bug do SwSh) |
+| Masuda | sorteios | 6 | +2 (8) |
 | Poké Radar | chance + cadeia | tabela abaixo | não vale |
 | Grande Subterrâneo | sorteios | 1; "algo bom vai acontecer" (Diglett) +1 | não vale |
+
+- **Fontes do BDSP:**
+  - A Rotom Labs, com dados do Anubis, dá os sorteios: ovos 1 → 2 com o Charm (1/2048,25), Masuda 6, Masuda e Charm 8, e Diglett 2 com ou sem Charm.
+  - A Serebii confirma o Masuda (1/682,7 e 1/512) e que o Charm não vale em encontros selvagens.
+  - Todo encontro estático do BDSP fica em 1/4096, com ou sem Charm.
+  - A tabela-resumo da Rotom Labs diz que o Charm "afeta o bônus do Diglett", mas a página do BDSP, mais detalhada, mostra 2 sorteios com e sem o Charm. Vale a página detalhada, que bate com a Bulbapedia.
 
 **Poké Radar (BDSP)**, a chance por moita (1/x):
 
@@ -233,12 +241,16 @@ Exemplos, como 1/x:
 | Método | Tipo | Regra | Charm |
 |---|---|---|---|
 | Encontro aleatório | sorteios | 1; Sparkling Power +1/+2/+3 **só no Hiperespaço** | **+3** |
-| Soft reset | sorteios | 1 | ⚠ a confirmar (proposta: +3) |
+| Soft reset | sorteios | 1 | **não vale** (fósseis) |
 
 - **Sparkling Power do donut (DLC Mega Dimension):** vale só no Hyperspace Lumiose e só para o tipo do poder.
-  - **Proposta:** um modificador "Sparkling Power (Hiperespaço)" com os níveis 0 a 3.
+  - **Decisão:** um modificador "Sparkling Power (Hiperespaço)" com os níveis 0 a 3. Os sorteios conferem com a Serebii e a Rotom Labs; com o Charm, o máximo é 7 sorteios, 1/585,57.
+  - **Nível 3:** o primeiro Pokémon do tipo que aparece perto do jogador ao entrar no Hiperespaço é shiny garantido (Serebii, Rotom Labs). Isso é um evento por entrada, não uma chance por encontro, então o cartão só mostra uma nota: "no nível 3, o primeiro do tipo é garantido".
   - O app não confere o tipo: o modificador só aparece, e só deve ser marcado, quando o usuário está no Hiperespaço com o poder do tipo do alvo.
-- A Bulbapedia não tem tabela de odds do Z-A além do Charm (+3) e do donut. Nada mais é somado.
+- **Soft reset no Z-A:** os estáticos são travados, menos os fósseis e os 5 lendários do scan (Latias, Latios, Cobalion, Terrakion e Virizion).
+  - Nos fósseis o Charm não vale (Rotom Labs, Dexerto, PokéJungle).
+  - Os lendários do scan aparecem no Hiperespaço e seguem o Encontro aleatório, com o Sparkling Power do tipo (Serebii).
+- Todo encontro selvagem segue essa regra, Alphas incluídos (Rotom Labs). Nada mais é somado.
 
 ### FireRed / LeafGreen (Switch)
 
@@ -278,24 +290,23 @@ Exemplos, como 1/x:
 - **Ovos com o bug:** basta o `charm` valer 1 em `eggs` no SwSh e no SV. O Masuda tem entrada própria (`rolls: 6, charm: 2`).
 - **Teste do backend:** todo par método × jogo de save tem uma entrada, e nenhum fica sem regra.
 
-## Pontos para decidir
+## Decisões
 
-1. **Aura no SwSh.** Os derrotados só melhoram os Pokémon com aura.
-   - **Proposta:** na caçada por Encontro aleatório no SwSh, um interruptor "Conto só os com aura".
-     - Ligado, as odds usam os derrotados.
-     - Desligado, fica 1 sorteio (+2 com o Charm), e o modificador dos derrotados some.
-   - A alternativa é misturar as chances pela taxa de aura (~1/1290 com Charm e 500 derrotados). Isso é menos útil, porque quem caça pela aura só conta os com aura.
-2. **Poké Radar: o que é um encontro.** Na cadeia 40+, os caçadores recarregam o Radar até uma moita brilhar, e a chance de 1/100 (XY) ou 1/99 (BDSP) é por moita.
-   - **Proposta:** o +1 conta encontros da cadeia, e as odds mostradas são as da moita.
-   - A alternativa seria contar usos do Radar, que somam cerca de 4 moitas cada.
-3. **Search Level do DexNav** sobe sozinho com o +1 (proposta acima).
-4. **⚠ Sem fonte segura:**
-   - o Charm no Ultra Wormhole (USUM);
-   - o Charm no Soft reset do LGPE e do Z-A;
-   - os ovos do BDSP.
+Revisão do usuário (2026-10-13): todas as recomendações foram aceitas. Os pontos sem fonte foram pesquisados em outras fontes.
 
-   **Proposta:** usar os valores marcados como proposta e anotar "a confirmar" na fonte do JSON. A alternativa é deixar esses pares com "odds indisponíveis", o que contraria a regra de nada pela metade.
-5. **Pesca em cadeia no ORAS:** incluir o ORAS no `shiny_methods.json` (proposta).
+1. **Aura no SwSh:** na caçada por Encontro aleatório no SwSh, um interruptor "Conto só os com aura".
+   - Ligado, as odds usam os derrotados.
+   - Desligado, fica 1 sorteio (+2 com o Charm), e o modificador dos derrotados some.
+2. **Poké Radar:** o +1 conta encontros da cadeia, e as odds mostradas são as da moita (1/100 no XY, 1/99 no BDSP na cadeia 40+).
+3. **Search Level do DexNav:** sobe com o +1, desce com o −1 e continua editável.
+4. **Pontos que estavam sem fonte**, resolvidos com Serebii e Rotom Labs:
+   - Ultra Wormhole: a tabela não muda com o Charm; lendários e UBs têm +2.
+   - LGPE: o Charm vale nos estáticos.
+   - Z-A: o Soft reset é dos fósseis, sem Charm.
+   - BDSP: ovos como no SwSh.
+
+   Nenhuma regra ficou "a confirmar".
+5. **Pesca em cadeia no ORAS:** entra no `shiny_methods.json`.
 
 ## Fontes
 
@@ -310,3 +321,18 @@ Bulbapedia, wikitexto consultado em 2026-10-13:
 - [Catch Combo](https://bulbapedia.bulbagarden.net/wiki/Catch_Combo): combo do LGPE.
 - [Donut](https://bulbapedia.bulbagarden.net/wiki/Donut): Sparkling Power no Z-A.
 - [Pokémon FireRed and LeafGreen Versions](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_FireRed_and_LeafGreen_Versions): o relançamento no Switch.
+
+Outras fontes, consultadas em 2026-10-13:
+- Serebii:
+  - [Shiny Pokémon no BDSP](https://www.serebii.net/brilliantdiamondshiningpearl/shinypokemon.shtml);
+  - [no LGPE](https://www.serebii.net/letsgopikachueevee/shinypokemon.shtml);
+  - [no Z-A](https://www.serebii.net/legendsz-a/shinypokemon.shtml);
+  - [Ultra Wormholes](https://www.serebii.net/ultrasunultramoon/ultrawormholes.shtml).
+- Rotom Labs:
+  - [taxas por jogo](https://rotomlabs.net/shiny-rates);
+  - [BDSP](https://rotomlabs.net/brilliant-diamond-shining-pearl/shiny-rates);
+  - [Z-A](https://rotomlabs.net/legends-z-a/shiny-rates);
+  - [Ultra Wormhole](https://rotomlabs.net/guide/ultra-wormhole-shiny-hunting).
+- [PokémonDB, chance no Ultra Wormhole](https://pokemondb.net/pokebase/295854/shiny-chance-in-the-ultra-wormhole): estimativa sem fonte, não usada.
+- [Smogon, guia de shiny do LGPE](https://www.smogon.com/ingame/guides/lgpe_shiny_hunt) e [Dexerto, odds do Z-A](https://www.dexerto.com/wikis/pokemon-legends-z-a/shiny-odds-pokemon-legends-z-a).
+- IGN: a busca não achou página da IGN com esses números.
