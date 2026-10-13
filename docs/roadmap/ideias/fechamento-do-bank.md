@@ -1,6 +1,6 @@
 # Fechamento do Pokémon Bank (ideia no pool)
 
-Sem issues e sem versão ainda: é a avaliação de impacto e a proposta, para revisão. Ver [backlog](../backlog.md).
+Issues: [backend#114](https://github.com/nunesvictor/ishinydex-backend/issues/114) (`homeUntil` no catálogo) e [frontend#222](https://github.com/nunesvictor/ishinydex-frontend/issues/222) (aviso, caçadas e saves). Proposta aprovada em 2026-10-13, ainda sem versão; ver [backlog](../backlog.md). O prazo: o aviso precisa sair até dezembro de 2026.
 
 ## O que foi anunciado
 
@@ -85,7 +85,7 @@ A ideia central: **a data vai no catálogo, e o app muda de comportamento sozinh
 - Isso só serve **antes** de fevereiro de 2027, então é o item com prazo. Ele precisa sair numa versão até **dezembro de 2026** para dar tempo de usar.
 
 ### 5. Backlog
-- **Gen V/IV e Gen III/VC** (backend#111/#112, frontend#199/#200): **proposta, fechar como "não planejado"** e remover do pool, com um comentário apontando para este documento.
+- **Gen V/IV e Gen III/VC** (backend#111/#112, frontend#199/#200): **fechadas como "não planejado"** em 2026-10-13 e removidas do pool.
   - Fazer a curadoria de 20 jogos para um caminho que fecha em fevereiro não compensa.
   - O plano em `cacadas-jogos-antigos.md` ganha uma nota com o motivo.
 - **Pokémon Bank como local** (registrar o que está guardado no Bank): **descartado**. O app não tem o conceito de "caixa fora de um jogo", e o valor dura só até fevereiro.

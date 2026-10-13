@@ -1,5 +1,7 @@
 # Caçadas em jogos da Gen VII e anteriores (ideia no pool)
 
+> **Fases 2 e 3 canceladas (2026-10-13).** O Pokémon Bank fecha em 26/02/2027, e com ele o caminho dessas gerações até o HOME. As issues backend#111/#112 e frontend#199/#200 foram fechadas como não planejadas. A fase 1 (Gen VII e VI) saiu na v2.7.0 e ganha a data de corte em [fechamento-do-bank.md](fechamento-do-bank.md).
+
 Issues: [backend#107](https://github.com/nunesvictor/ishinydex-backend/issues/107) (jogos no catálogo), [frontend#186](https://github.com/nunesvictor/ishinydex-frontend/issues/186) (save só de ida) e [frontend#187](https://github.com/nunesvictor/ishinydex-frontend/issues/187) (marcas, nomes e ícones). Sem versão; ver [backlog](../backlog.md).
 
 ## O que o diagrama diz
