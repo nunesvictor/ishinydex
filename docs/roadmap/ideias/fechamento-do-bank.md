@@ -49,6 +49,16 @@ Algumas formas só têm shiny pelos jogos do Bank, porque são travadas no Switc
 
 Com o fechamento, ficam **sem caçada possível** para o HOME. Com a regra da proposta 2 abaixo, o app calcula isso sozinho: sem jogo válido, a forma sai da lista de caçáveis.
 
+## Revisão dos mocks (2026-10-13)
+- **Caçadas e saves não dependem do HOME.** O usuário continua jogando e caçando nos jogos do 3DS. O fechamento do Bank só afeta a **transferência**: o destino HOME, a etiqueta e o aviso. Depois do corte, os saves do 3DS seguem completos (caçadas, odds, OT e espécimes), e nada some da aba Faltam nem do "Começar caçada". Isso substitui as propostas 2 e 3 abaixo onde elas tiravam os jogos do 3DS das caçadas: o `reachesHome` não entra no `huntableVersions`.
+- **Etiqueta sucinta, pronta para a i18n**, a mesma na aba Faltam, no save, no espécime e na caçada:
+  - antes do corte: ⏳ `HOME 26/02` (a data no formato do idioma);
+  - depois: elo cortado + `HOME`.
+
+  A frase completa fica no tooltip e no leitor de tela. "HOME" é nome de produto e não se traduz.
+- **Mocks aprovados:** canvas, página "Fechamento do Bank · v2.10.0", 7 quadros.
+- **Ideia ligada:** gerenciar arquivos de save, no backlog ([frontend#225](https://github.com/nunesvictor/ishinydex-frontend/issues/225)).
+
 ## Proposta
 
 A ideia central: **a data vai no catálogo, e o app muda de comportamento sozinho no instante do fechamento**, pelo relógio do aparelho. Não precisa de release no dia, e funciona offline, porque a data já vem no catálogo baixado.
