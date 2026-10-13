@@ -18,8 +18,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Ideia | Issue | Notas |
 | --- | --- | --- |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). Inclui decidir a marca "Já visitou o Champions" depois da visita, como no HOME ([frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174)). |
-| Caçadas nos jogos da Gen V e IV (só de ida, pelo Bank) | [backend#111](https://github.com/nunesvictor/ishinydex-backend/issues/111), [frontend#199](https://github.com/nunesvictor/ishinydex-frontend/issues/199) | [Plano](ideias/cacadas-jogos-antigos.md), fase 2. Quase só curadoria e ícones; sem marca de origem. A fase 1 (VII e VI) saiu na [v2.7.0](v2.7.0.md). |
-| Caçadas nos jogos da Gen III e do Virtual Console | [backend#112](https://github.com/nunesvictor/ishinydex-backend/issues/112), [frontend#200](https://github.com/nunesvictor/ishinydex-frontend/issues/200) | [Plano](ideias/cacadas-jogos-antigos.md), fase 3. Marca Game Boy no VC; FRLG do GBA com a marca escolhida; RBY só se o shiny pelo Transporter se confirmar. Mock antes. |
+| Adequação ao fechamento do Pokémon Bank (26/02/2027) | [backend#114](https://github.com/nunesvictor/ishinydex-backend/issues/114), [frontend#222](https://github.com/nunesvictor/ishinydex-frontend/issues/222) | [Plano](ideias/fechamento-do-bank.md). Backend → frontend. **O aviso precisa sair até dezembro de 2026.** Mock antes. |
 
 ## Plataforma e documentação
 | Ideia | Issue | Notas |
