@@ -34,6 +34,8 @@ Hoje o app é só em português. A proposta é que a interface tenha **en-US** c
 5. **Privacidade (#101):** a versão em inglês, com links entre as duas.
 
 ## Quando for planejar
+Planejado para a v2.11.0, em etapas: [v2.11.0.md](../v2.11.0.md).
+
 - É uma versão minor dedicada, sem misturar com outras features grandes, como o registro de caçadas.
 - O custo é grande pelo volume de textos, mas cada PR é mecânico. A parte que exige decisão é a dos textos fora de widgets.
 - O arquivo de dados não muda: a preferência de idioma é só do aparelho, como o formato de data.
