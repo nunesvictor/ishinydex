@@ -18,7 +18,6 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Ideia | Issue | Notas |
 | --- | --- | --- |
 | Histórico de transferências do espécime entre HOME e saves | [backend#65](https://github.com/nunesvictor/ishinydex-backend/issues/65) | Permitiria regras de "só ida" por espécime (ex.: FRLG). Inclui decidir a marca "Já visitou o Champions" depois da visita, como no HOME ([frontend#174](https://github.com/nunesvictor/ishinydex-frontend/issues/174)). |
-| Adequação ao fechamento do Pokémon Bank (26/02/2027) | [backend#114](https://github.com/nunesvictor/ishinydex-backend/issues/114), [frontend#222](https://github.com/nunesvictor/ishinydex-frontend/issues/222) | [Plano](ideias/fechamento-do-bank.md). Backend → frontend. **O aviso precisa sair até dezembro de 2026.** Mock antes. |
 
 ## Plataforma e documentação
 | Ideia | Issue | Notas |

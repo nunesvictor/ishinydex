@@ -1,6 +1,6 @@
 # Fechamento do Pokémon Bank (ideia no pool)
 
-Issues: [backend#114](https://github.com/nunesvictor/ishinydex-backend/issues/114) (`homeUntil` no catálogo) e [frontend#222](https://github.com/nunesvictor/ishinydex-frontend/issues/222) (aviso, caçadas e saves). Proposta aprovada em 2026-10-13, ainda sem versão; ver [backlog](../backlog.md). O prazo: o aviso precisa sair até dezembro de 2026.
+Issues: [backend#114](https://github.com/nunesvictor/ishinydex-backend/issues/114) (`homeUntil` no catálogo) e [frontend#222](https://github.com/nunesvictor/ishinydex-frontend/issues/222) (aviso, caçadas e saves). Proposta aprovada em 2026-10-13; entra na [v2.10.0](../v2.10.0.md). O prazo: o aviso precisa sair até dezembro de 2026.
 
 ## O que foi anunciado
 
