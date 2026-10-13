@@ -13,6 +13,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Fluxo de PersonalDex personalizado | [frontend#34](https://github.com/nunesvictor/ishinydex-frontend/issues/34) | |
 | Golpes com nomes em inglês | [frontend#36](https://github.com/nunesvictor/ishinydex-frontend/issues/36) | |
 | Idioma preferido no cadastro do dex | [frontend#210](https://github.com/nunesvictor/ishinydex-frontend/issues/210) | Filtrar o idioma fora do dex (novo motivo nas Caçadas) e preencher o idioma no cadastro. Campo novo nos dados: decidir sobre o schema antes. Mock antes. |
+| Forças e fraquezas pelos tipos da forma | [frontend#230](https://github.com/nunesvictor/ishinydex-frontend/issues/230) | Fraquezas 4× ("extremamente efetivo") e 2×, e as forças do ataque com o mesmo tipo (STAB). Tabela de tipos da geração 6 em diante, só no frontend. Sem habilidades e sem Tera. Mock antes. |
 
 ## Dados e catálogo
 | Ideia | Issue | Notas |
