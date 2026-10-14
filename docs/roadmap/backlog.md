@@ -7,14 +7,12 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Interface
 | Ideia | Issue | Notas |
 | --- | --- | --- |
-| Identidade visual com as cores de Pokémon (pokébola e amarelo da logo) | [frontend#162](https://github.com/nunesvictor/ishinydex-frontend/issues/162) | Mock com 2 ou 3 paletas antes. Minor pelo SemVer; 3.0 só junto com uma quebra de compatibilidade. |
-| Cores das versões nos destaques de jogo | [frontend#203](https://github.com/nunesvictor/ishinydex-frontend/issues/203) | Começa pela etiqueta "exclusivo Scarlet", que sai com cor neutra na v2.7.2. Cor por versão nos dois temas, com contraste conferido; junto com a identidade visual (#162). Mock antes. |
+| Tema Pokébola (paleta A) | [frontend#244](https://github.com/nunesvictor/ishinydex-frontend/issues/244) | **Depois de #162** (identidade C como padrão na v2.12.0, com a paleta como dado). Vermelho como cor principal e amarelo nos destaques. Escolha de tema em Ajustes → Preferências, só deste aparelho (como o idioma); o theme-color acompanha no boot. Mock pronto no canvas. |
+| Tema Logo (paleta B) | [frontend#245](https://github.com/nunesvictor/ishinydex-frontend/issues/245) | **Depois de #162.** Azul e amarelo da logo, barra superior amarela (pede cor própria da barra na paleta). Mesma escolha de tema da #244; quem sair primeiro leva a tela. Mock pronto no canvas. |
 | Fluxo de PersonalDex personalizado | [frontend#34](https://github.com/nunesvictor/ishinydex-frontend/issues/34) | |
 | Golpes com nomes em inglês | [frontend#36](https://github.com/nunesvictor/ishinydex-frontend/issues/36) | Pré-requisito do team builder (#231): golpes e aprendizado por forma e grupo de versões no catálogo (backend primeiro), mostrados na ficha da forma. |
 | Team builder compatível com o jogo | [frontend#231](https://github.com/nunesvictor/ishinydex-frontend/issues/231) | **Depois de #36.** Times de até 6 válidos no jogo escolhido: formas, golpes, habilidade, natureza, EVs/IVs, item e Tera onde houver. Membro pode apontar para um espécime. Exporta no formato do Showdown. Registro novo `teams` (o schema sobe). Mock antes. |
 | Idioma preferido no cadastro do dex | [frontend#210](https://github.com/nunesvictor/ishinydex-frontend/issues/210) | Filtrar o idioma fora do dex (novo motivo nas Caçadas) e preencher o idioma no cadastro. Campo novo nos dados: decidir sobre o schema antes. Mock antes. |
-| Forças e fraquezas pelos tipos da forma | [frontend#230](https://github.com/nunesvictor/ishinydex-frontend/issues/230) | Fraquezas 4× ("extremamente efetivo") e 2×, e as forças do ataque com o mesmo tipo (STAB). Tabela de tipos da geração 6 em diante, só no frontend. Sem habilidades e sem Tera. Mock antes. |
-| Card da caçada para compartilhar | [frontend#243](https://github.com/nunesvictor/ishinydex-frontend/issues/243) | Ao registrar o "Encontrei!" (e depois, no registro da caçada do espécime): imagem com o sprite shiny, método, contagem, duração, jogo e odds, compartilhada pela folha do sistema (Web Share) ou baixada. Nos dois idiomas. Decidir no mock o que entra (o ID do treinador?) e o formato. Só frontend. Mock antes. |
 
 ## Dados e catálogo
 | Ideia | Issue | Notas |
@@ -26,6 +24,5 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Ideia | Issue | Notas |
 | --- | --- | --- |
 | Releases com binários: Linux, Windows, Android e macOS | [#50](https://github.com/nunesvictor/ishinydex/issues/50) | Ligado à meta do app nativo. |
-| README em inglês para quem quer instalar o app | [#102](https://github.com/nunesvictor/ishinydex/issues/102) | Depois da interface. CONTRIBUTING e docs seguem em pt-BR. |
 | Documentação técnica separada do README | [#49](https://github.com/nunesvictor/ishinydex/issues/49) | |
 | Conferir os dados do app instalado depois de ~7 dias sem uso (iOS) | [#83](https://github.com/nunesvictor/ishinydex/issues/83) | Verificação manual, não é código. |
