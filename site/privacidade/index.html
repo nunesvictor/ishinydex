@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>iShinyDex · Privacidade</title>
+  <link rel="alternate" hreflang="en" href="../privacy/">
   <meta name="description" content="Política de privacidade do iShinyDex: sem servidor, sem conta e sem coleta de dados.">
   <!-- Página fixa do GitHub Pages (ishinydex#79): a política de privacidade
-       que o Dropbox pede para o status de produção (etapa 9 de #48).
+       que o Dropbox pede para o status de produção (etapa 9 de #48). A versão
+       em inglês fica em ../privacy/ (ishinydex#101); as duas dizem o mesmo.
        Links relativos: vale para qualquer cópia publicada do projeto. -->
   <style>
     :root {
@@ -69,7 +71,7 @@
 </head>
 <body>
 <main>
-  <nav><a href="#pt">Português</a> · <a href="#en">English</a> · <a href="../">Abrir o app / Open the app</a></nav>
+  <nav><a href="../privacy/" hreflang="en" lang="en">English</a> · <a href="../">Abrir o app</a></nav>
 
   <section id="pt" lang="pt-BR">
     <h1>Política de privacidade do iShinyDex</h1>
@@ -151,84 +153,6 @@
       Inc.</p>
   </section>
 
-  <hr>
-
-  <section id="en" lang="en">
-    <h1>iShinyDex privacy policy</h1>
-    <p class="lead">Last updated: October 6, 2026.</p>
-
-    <div class="summary">
-      <ul>
-        <li>iShinyDex has no server, no accounts and collects no data.</li>
-        <li>Your data stays on your device.</li>
-        <li>Dropbox sync is optional and stores one file in <strong>your own</strong> Dropbox, in a folder dedicated to the app.</li>
-      </ul>
-    </div>
-
-    <h2>What iShinyDex is</h2>
-    <p>A free, open-source app to organize a personal Pokémon collection in the
-      style of Pokémon HOME boxes. It runs entirely in the browser: the pages
-      are static files, and none of your information is sent to the project's
-      maintainers.</p>
-
-    <h2>Data stored on your device</h2>
-    <p>Everything you enter (dexes, boxes, specimens, trainers, saves and
-      settings) is kept in the browser storage on this device (on iPhone and
-      iPad, in the storage of the Home Screen app). Clearing the site data in
-      the browser, or removing the app, deletes it.</p>
-    <p>Under <strong>Ajustes → Seus dados</strong> (Settings → Your data; the app is in Portuguese) you can <strong>export</strong>
-      everything to a <code>.json</code> file and <strong>import</strong> it
-      back. The file stays wherever you save it.</p>
-
-    <h2>Dropbox sync (optional)</h2>
-    <p>If you connect Dropbox under <strong>Ajustes → Sincronização</strong> (Settings → Sync):</p>
-    <ul>
-      <li>You sign in on the Dropbox website. The app never sees your password.</li>
-      <li>The app keeps a Dropbox credential (a <em>refresh token</em>) on the
-        device, so it can sync without asking you to sign in again.</li>
-      <li>The app can only access its own folder, inside <code>Apps</code> in
-        your Dropbox. It writes a single file there, <code>ishinydex.json</code>,
-        with the same data as the device. It cannot see or change any of your
-        other files.</li>
-      <li>Permissions requested from Dropbox: read and write files in the app
-        folder (<code>files.content.read</code>, <code>files.content.write</code>)
-        and read the account name (<code>account_info.read</code>), to show which
-        Dropbox you are connected to.</li>
-      <li>Your device talks to Dropbox directly. Nothing goes through iShinyDex
-        servers, because there are none.</li>
-    </ul>
-    <p><strong>Desconectar</strong> (Disconnect) under Settings → Sync removes the credential
-      from the device. To revoke access for good, use
-      <a href="https://www.dropbox.com/account/connected_apps">Connected
-      apps</a> in Dropbox. The file in the app folder stays there until you
-      delete it.</p>
-    <p>Your use of Dropbox is governed by the
-      <a href="https://www.dropbox.com/privacy">Dropbox privacy policy</a>.</p>
-
-    <h2>Other services</h2>
-    <ul>
-      <li><strong>GitHub Pages</strong> hosts the app files. Like any website,
-        GitHub may log technical access data (such as IP addresses); see the
-        <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub
-        privacy statement</a>.</li>
-      <li>Pokémon images come from the public
-        <a href="https://github.com/PokeAPI/sprites">PokeAPI/sprites</a>
-        repository, served by <code>raw.githubusercontent.com</code>.</li>
-    </ul>
-    <p>The app uses no tracking cookies, analytics or ads.</p>
-
-    <h2>Children</h2>
-    <p>The app collects no data from anyone, of any age.</p>
-
-    <h2>Changes and contact</h2>
-    <p>Changes to this policy are published on this page and in the repository
-      history. Questions:
-      <a href="https://github.com/nunesvictor/ishinydex/issues">project issues
-      on GitHub</a>.</p>
-    <p>iShinyDex is a non-profit fan project. Pokémon and related names, images
-      and trademarks are property of Nintendo, Creatures, GAME FREAK and The
-      Pokémon Company. iShinyDex is not affiliated with Dropbox, Inc.</p>
-  </section>
 
   <footer><p><a href="../">iShinyDex</a></p></footer>
 </main>

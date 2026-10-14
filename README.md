@@ -90,7 +90,8 @@ conexão voltar.
 
 O iShinyDex não tem servidor, não tem conta, não usa cookies de
 rastreamento, análise de uso nem anúncios. Detalhes na
-[**política de privacidade**](https://nunesvictor.github.io/ishinydex/privacidade/).
+[**política de privacidade**](https://nunesvictor.github.io/ishinydex/privacidade/)
+(em inglês: [privacy policy](https://nunesvictor.github.io/ishinydex/privacy/)).
 
 ## Hospede sua cópia
 
