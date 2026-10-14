@@ -14,6 +14,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Team builder compatível com o jogo | [frontend#231](https://github.com/nunesvictor/ishinydex-frontend/issues/231) | **Depois de #36.** Times de até 6 válidos no jogo escolhido: formas, golpes, habilidade, natureza, EVs/IVs, item e Tera onde houver. Membro pode apontar para um espécime. Exporta no formato do Showdown. Registro novo `teams` (o schema sobe). Mock antes. |
 | Idioma preferido no cadastro do dex | [frontend#210](https://github.com/nunesvictor/ishinydex-frontend/issues/210) | Filtrar o idioma fora do dex (novo motivo nas Caçadas) e preencher o idioma no cadastro. Campo novo nos dados: decidir sobre o schema antes. Mock antes. |
 | Forças e fraquezas pelos tipos da forma | [frontend#230](https://github.com/nunesvictor/ishinydex-frontend/issues/230) | Fraquezas 4× ("extremamente efetivo") e 2×, e as forças do ataque com o mesmo tipo (STAB). Tabela de tipos da geração 6 em diante, só no frontend. Sem habilidades e sem Tera. Mock antes. |
+| Card da caçada para compartilhar | [frontend#243](https://github.com/nunesvictor/ishinydex-frontend/issues/243) | Ao registrar o "Encontrei!" (e depois, no registro da caçada do espécime): imagem com o sprite shiny, método, contagem, duração, jogo e odds, compartilhada pela folha do sistema (Web Share) ou baixada. Nos dois idiomas. Decidir no mock o que entra (o ID do treinador?) e o formato. Só frontend. Mock antes. |
 
 ## Dados e catálogo
 | Ideia | Issue | Notas |
