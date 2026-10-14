@@ -6,6 +6,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
+| v2.12.0 | planejado (visual e compartilhamento) | [v2.12.0.md](v2.12.0.md) |
 | v2.11.0 | lançado em 2026-10-14 (internacionalização) | [v2.11.0.md](v2.11.0.md) |
 | v2.10.0 | lançado em 2026-10-13 | [v2.10.0.md](v2.10.0.md) |
 | v2.9.0 | lançado em 2026-10-13 | [v2.9.0.md](v2.9.0.md) |
