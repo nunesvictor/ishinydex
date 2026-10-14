@@ -7,6 +7,8 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Interface
 | Ideia | Issue | Notas |
 | --- | --- | --- |
+| Tema Pokébola (paleta A) | [frontend#244](https://github.com/nunesvictor/ishinydex-frontend/issues/244) | **Depois de #162** (identidade C como padrão na v2.12.0, com a paleta como dado). Vermelho como cor principal e amarelo nos destaques. Escolha de tema em Ajustes → Preferências, só deste aparelho (como o idioma); o theme-color acompanha no boot. Mock pronto no canvas. |
+| Tema Logo (paleta B) | [frontend#245](https://github.com/nunesvictor/ishinydex-frontend/issues/245) | **Depois de #162.** Azul e amarelo da logo, barra superior amarela (pede cor própria da barra na paleta). Mesma escolha de tema da #244; quem sair primeiro leva a tela. Mock pronto no canvas. |
 | Fluxo de PersonalDex personalizado | [frontend#34](https://github.com/nunesvictor/ishinydex-frontend/issues/34) | |
 | Golpes com nomes em inglês | [frontend#36](https://github.com/nunesvictor/ishinydex-frontend/issues/36) | Pré-requisito do team builder (#231): golpes e aprendizado por forma e grupo de versões no catálogo (backend primeiro), mostrados na ficha da forma. |
 | Team builder compatível com o jogo | [frontend#231](https://github.com/nunesvictor/ishinydex-frontend/issues/231) | **Depois de #36.** Times de até 6 válidos no jogo escolhido: formas, golpes, habilidade, natureza, EVs/IVs, item e Tera onde houver. Membro pode apontar para um espécime. Exporta no formato do Showdown. Registro novo `teams` (o schema sobe). Mock antes. |
