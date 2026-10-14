@@ -24,7 +24,7 @@ Hoje o app é só em português. A proposta é que a interface tenha **en-US** c
 2. **Infraestrutura no app (frontend#178, 1º PR):**
    - `flutter gen-l10n` com `app_en.arb` (modelo) e `app_pt.arb`;
    - o idioma segue o do aparelho: português vira pt-BR, qualquer outro vira en-US;
-   - opção de idioma em Ajustes, guardada como o formato de data;
+   - opção de idioma em Ajustes, guardada só no aparelho, como o último dex aberto;
    - helper de teste que fixa pt-BR, para não reescrever os `find.text` existentes.
 3. **Migração, uma feature por PR** ("Parte de #178"):
    - cada texto fixo passa a usar `AppLocalizations.of(context)`;
@@ -38,4 +38,4 @@ Planejado para a v2.11.0, em etapas: [v2.11.0.md](../v2.11.0.md).
 
 - É uma versão minor dedicada, sem misturar com outras features grandes, como o registro de caçadas.
 - O custo é grande pelo volume de textos, mas cada PR é mecânico. A parte que exige decisão é a dos textos fora de widgets.
-- O arquivo de dados não muda: a preferência de idioma é só do aparelho, como o formato de data.
+- O arquivo de dados não muda: a preferência de idioma é só do aparelho, como o último dex aberto.
