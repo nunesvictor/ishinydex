@@ -1,153 +1,188 @@
 # iShinyDex
 
-Organize sua coleção de Pokémon no estilo das boxes do **Pokémon HOME**:
-monte o seu PersonalDex (a Living Dex, a Shiny Living Dex ou outra), veja o
-que falta em cada box, cadastre os espécimes (shiny, alfa, pokébola,
-treinador, data de captura…) e acompanhe o progresso por geração.
+**English** · [Português](README.pt-BR.md)
 
-### ▶️ [Abrir o iShinyDex](https://nunesvictor.github.io/ishinydex/)
+Organize your Pokémon collection in the style of **Pokémon HOME** boxes and
+keep track of your shiny hunts. Build your PersonalDex (with the standard
+set of forms, regular or shiny), see what's missing in each box, register
+your specimens (shiny, alpha, Poké Ball, trainer, capture date…) and count
+the encounters of each hunt until the shiny shows up.
 
-Quer só dar uma olhada? A
-[**demonstração**](https://nunesvictor.github.io/ishinydex/demo/) vem com
-dados de exemplo, que somem ao recarregar a página.
+### ▶️ [Open iShinyDex](https://nunesvictor.github.io/ishinydex/)
 
-- **Sem conta e sem servidor:** seus dados ficam no seu aparelho.
-- **Funciona offline**, depois de aberto uma vez.
-- **Instala como app** no iPhone, no iPad e no computador.
-- **Sincronização opcional** com o seu Dropbox, para ter os mesmos dados em
-  todos os aparelhos.
+Just want a look? The
+[**demo**](https://nunesvictor.github.io/ishinydex/demo/) comes with sample
+data, which is gone when you reload the page.
 
-## Instalar
+- **No account, no server:** your data stays on your device.
+- **Works offline**, once opened.
+- **Installs as an app** on iPhone, iPad and desktop.
+- **Optional sync** with your Dropbox, to have the same data on all your
+  devices.
+- **In English and Portuguese.**
 
-O iShinyDex roda no navegador. Instalado, ele abre em tela cheia, com ícone
-próprio, como um app.
+## What you can do
 
-**iPhone e iPad**
-1. Abra o [link do app](https://nunesvictor.github.io/ishinydex/) no
+- **PersonalDex:** 30-slot boxes, like in HOME, with progress per box and
+  per generation and a highlight of what's missing. Each slot shows the form
+  and the deposited specimen, with base stats, type matchups, the evolution
+  line and which games it appears in. Swipe to move from one slot to the
+  next.
+- **Specimens:** an inventory of everything you own, with filters (rarity,
+  game, status, type, generation…), bulk editing, sending to a game and the
+  list of what's **Away from HOME**.
+- **Hunts:** what's still missing as a shiny in your shiny dex, and your
+  hunts in progress, with a counter (+1, hold to count fast) or a timer, the
+  game's method, the odds with the Shiny Charm, and pauses. On "Found it!",
+  the specimen comes pre-filled, and the app offers a **hunt card** to
+  share. Hunts don't need a dex.
+- **Trainers and saves:** your OTs and the saves of each game, which tell in
+  which games each form can be hunted and which methods apply.
+- **Shiny locks:** forms with no shiny (or distribution only) are marked,
+  and you can add your own.
+
+## Install
+
+iShinyDex runs in the browser. Once installed, it opens full screen, with
+its own icon, like an app.
+
+**iPhone and iPad**
+1. Open the [app link](https://nunesvictor.github.io/ishinydex/) in
    **Safari**.
-2. Toque em **Compartilhar** (o quadrado com a seta) → **Adicionar à Tela de
-   Início** → **Adicionar**.
-3. Use sempre pelo ícone da Tela de Início. No iPhone e no iPad, o app
-   instalado guarda os dados separados do Safari.
+2. Tap **Share** (the square with the arrow; on iOS 26 and later, it's in
+   the **⋯** menu next to the address) → **Add to Home Screen** → **Add**.
+3. Always use it from the Home Screen icon. On iPhone and iPad, the
+   installed app keeps its data separate from Safari.
 
-**Computador (Chrome ou Edge)**
-1. Abra o [link do app](https://nunesvictor.github.io/ishinydex/).
-2. Clique no ícone de **instalar** na barra de endereço (ou procure a opção
-   de instalar no menu ⋮ do navegador).
+**Desktop (Chrome or Edge)**
+1. Open the [app link](https://nunesvictor.github.io/ishinydex/).
+2. Click the **install** icon in the address bar (or look for the install
+   option in the browser's ⋮ menu).
 
-Também dá para usar direto no navegador, sem instalar.
+You can also use it right in the browser, without installing.
 
-**Atualizações** chegam sozinhas: se a versão em **Ajustes → Sobre o
-iShinyDex** não mudou depois de uma novidade, feche o app e abra de novo.
+**Updates:** when a new version is out, the app tells you ("A new version of
+iShinyDex is available") with a **Reload** button. The installed version is
+shown in **Settings → About iShinyDex**.
 
-## Seus dados
+**Language:** the app follows your device's language (English or
+Portuguese; English for any other). To change it, use **Settings →
+Language**.
 
-Tudo o que você cadastra fica **no aparelho**, no armazenamento do navegador
-(ou do app instalado). Ninguém mais tem acesso, nem quem mantém o projeto.
+## Your data
 
-Isso também quer dizer que, se você apagar os dados do site no navegador ou
-remover o app, os dados vão junto. Por isso:
+Everything you register stays **on your device**, in the browser's storage
+(or the installed app's). Nobody else has access to it, not even the
+project's maintainer.
 
-### Faça backup
+That also means that if you clear the site's data in the browser or remove
+the app, your data goes with it. So:
 
-Em **Ajustes → Seus dados**:
-- **Exportar dados** baixa um arquivo `.json` com tudo. No iPhone e no iPad,
-  dá para salvá-lo no iCloud Drive (**Salvar em Arquivos**).
-- **Importar dados** lê um arquivo exportado e mostra um resumo antes de
-  aplicar:
-  - **Substituir** deixa o aparelho exatamente como o arquivo;
-  - **Juntar** mantém os dois lados; se o mesmo registro mudou nos dois, vale
-    a mudança mais recente.
+### Back up
 
-O mesmo arquivo serve para levar seus dados para outro aparelho sem usar o
+In **Settings → Your data**:
+- **Export data** downloads a `.json` file with everything. On iPhone and
+  iPad, you can save it to iCloud Drive (**Save to Files**).
+- **Import data** reads an exported file and shows a summary before
+  applying it:
+  - **Replace this device's data** makes the device exactly like the file;
+  - **Merge with this device's data** keeps both sides; if the same record
+    changed on both, the most recent change wins.
+
+The same file also moves your data to another device without Dropbox.
+
+## Sync with Dropbox (optional)
+
+With Dropbox on, your desktop, iPhone and iPad share the same data, and you
+get an automatic backup in your own account.
+
+1. In **Settings → Your data → Sync**, tap **Connect to Dropbox** and
+   authorize it on the Dropbox site.
+2. Repeat on each device. If the device already has data and so does
+   Dropbox, the app asks what to do: **Merge both** (recommended), **Use
+   only Dropbox's** or **Use only this device's**.
+
+From then on, the app syncs on its own: when it opens, when you come back
+to it, a few seconds after each change and when you pull the dex list to
+refresh. There's also a **Sync now** button. Offline, it keeps your changes
+and sends them when the connection is back.
+
+- The app only sees **its own folder**, inside `Apps` in your Dropbox, where
+  it writes a single file (`ishinydex.json`). It can't see any other file of
+  yours.
+- **Disconnect** (on the same screen) only turns sync off: your data stays
+  on the device and in Dropbox.
+- If you see "Couldn't sync" because access expired, disconnect and
+  connect again.
+
+## Privacy
+
+iShinyDex has no server, no account, no tracking cookies, no usage
+analytics and no ads. The hunt card is made on your device and only leaves
+it if you share it. Details in the
+[**privacy policy**](https://nunesvictor.github.io/ishinydex/privacy/)
+(in Portuguese: [política de privacidade](https://nunesvictor.github.io/ishinydex/privacidade/)).
+
+## Host your own copy
+
+The link above is the copy published by the project's maintainer. You can
+publish your own, for free, on your account's GitHub Pages: the data of
+whoever uses your copy stays on their devices, and the app never talks to
+the original copy. (Only the build downloads the catalog from the
+[ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend/releases)
+releases.)
+
+1. **Fork** this repository on GitHub.
+2. In the fork, open the **Actions** tab and enable the workflows (GitHub
+   turns them off in forks).
+3. In **Settings → Pages**, choose **Source: GitHub Actions**.
+4. Publish: **Actions → Pages → Run workflow** (on `main`). The app will be
+   at `https://<your-user>.github.io/<repository-name>/`. To also publish
+   from `v*` tags, like here, allow that pattern in **Settings →
+   Environments → github-pages**.
+5. **Dropbox (optional):** without this step, your copy works without sync
+   (export and import still work).
+   1. At [dropbox.com/developers/apps](https://www.dropbox.com/developers/apps),
+      create an app: **Scoped access** → **App folder**.
+   2. In **Permissions**, check `files.content.read`, `files.content.write`
+      and `account_info.read` and click **Submit**.
+   3. In **Settings → OAuth 2 → Redirect URIs**, add the exact address of
+      your copy, with the trailing slash
+      (`https://<your-user>.github.io/<repository-name>/`).
+   4. Copy the **App key** (it's public; the *App secret* isn't used) and
+      save it in the fork under **Settings → Secrets and variables →
+      Actions → Variables**, named `DROPBOX_APP_KEY`.
+   5. Publish again (step 4).
+
+   While the Dropbox app is in development, only your account can connect.
+   To let other people in, use **Enable additional users** in the Dropbox
+   console (up to 500 accounts; from 50 on, Dropbox requires the production
+   request).
+
+## Legal notice
+
+iShinyDex is a free, non-profit fan project. Pokémon and the related names,
+images and trademarks are property of Nintendo, Creatures, GAME FREAK and
+The Pokémon Company. Reference data comes from [PokéAPI](https://pokeapi.co/)
+and images from the [PokeAPI/sprites](https://github.com/PokeAPI/sprites)
+repository. The game, type and origin mark icons, in the Pokémon HOME
+style, come from the [Bulbagarden Archives](https://archives.bulbagarden.net/),
+and the curated lists (shiny locks, shiny methods and odds, forms per game)
+were checked against [Bulbapedia](https://bulbapedia.bulbagarden.net/).
+iShinyDex is not affiliated with any of these companies or sites, nor with
 Dropbox.
 
-## Sincronizar com o Dropbox (opcional)
+## For developers
 
-Com o Dropbox ligado, PC, iPhone e iPad ficam com os mesmos dados, e você
-ganha um backup automático na sua própria conta.
-
-1. Em **Ajustes → Seus dados → Sincronização**, toque em **Conectar ao
-   Dropbox** e autorize no site do Dropbox.
-2. Repita em cada aparelho. Se o aparelho já tiver dados e o Dropbox também,
-   o app pergunta o que fazer: **juntar os dois** (recomendado), usar só os do
-   Dropbox ou usar só os do aparelho.
-
-Daí em diante, o app sincroniza sozinho: ao abrir, ao voltar para ele,
-alguns segundos depois de cada mudança e quando você puxa a lista de dexes
-para atualizar. Sem internet, ele guarda as mudanças e envia quando a
-conexão voltar.
-
-- O app só enxerga **a pasta dele**, dentro de `Apps` no seu Dropbox, onde
-  grava um único arquivo (`ishinydex.json`). Ele não vê nenhum outro arquivo
-  seu.
-- **Desconectar** (na mesma tela) só desliga a sincronização: os dados
-  continuam no aparelho e no Dropbox.
-- Se aparecer "Não foi possível sincronizar" porque o acesso expirou,
-  desconecte e conecte de novo.
-
-## Privacidade
-
-O iShinyDex não tem servidor, não tem conta, não usa cookies de
-rastreamento, análise de uso nem anúncios. Detalhes na
-[**política de privacidade**](https://nunesvictor.github.io/ishinydex/privacidade/)
-(em inglês: [privacy policy](https://nunesvictor.github.io/ishinydex/privacy/)).
-
-## Hospede sua cópia
-
-O link acima é a cópia publicada por quem mantém o projeto. Você pode
-publicar a sua, de graça, no GitHub Pages da sua conta: os dados de quem usa
-a sua cópia ficam nos aparelhos dessas pessoas, e o app não fala com a cópia
-original. (Só o build baixa o catálogo das releases do
-[ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend/releases).)
-
-1. Faça um **fork** deste repositório no GitHub.
-2. No fork, abra a aba **Actions** e ative os workflows (o GitHub os deixa
-   desligados em forks).
-3. Em **Settings → Pages**, escolha **Source: GitHub Actions**.
-4. Publique: **Actions → Pages → Run workflow** (na `main`). O app fica em
-   `https://<seu-usuário>.github.io/<nome-do-repositório>/`. Para publicar
-   também por tags `v*`, como aqui, permita esse padrão em **Settings →
-   Environments → github-pages**.
-5. **Dropbox (opcional):** sem este passo, a sua cópia funciona sem a
-   sincronização (exportar e importar continuam valendo).
-   1. Em [dropbox.com/developers/apps](https://www.dropbox.com/developers/apps),
-      crie um app: **Scoped access** → **App folder**.
-   2. Em **Permissions**, marque `files.content.read`, `files.content.write` e
-      `account_info.read` e clique em **Submit**.
-   3. Em **Settings → OAuth 2 → Redirect URIs**, adicione o endereço exato da
-      sua cópia, com a barra no final
-      (`https://<seu-usuário>.github.io/<nome-do-repositório>/`).
-   4. Copie a **App key** (é pública; o *App secret* não é usado) e grave-a
-      no fork em **Settings → Secrets and variables → Actions → Variables**,
-      com o nome `DROPBOX_APP_KEY`.
-   5. Publique de novo (passo 4).
-
-   Enquanto o app do Dropbox estiver em desenvolvimento, só a sua conta
-   conecta. Para liberar outras pessoas, use **Enable additional users** no
-   painel do Dropbox (até 500 contas; a partir de 50, o Dropbox exige o
-   pedido de produção).
-
-## Aviso legal
-
-O iShinyDex é um projeto de fã, gratuito e sem fins lucrativos. Pokémon e os
-nomes, imagens e marcas relacionados são propriedade da Nintendo, Creatures,
-GAME FREAK e The Pokémon Company. Os dados de referência vêm da
-[PokéAPI](https://pokeapi.co/) e as imagens do repositório
-[PokeAPI/sprites](https://github.com/PokeAPI/sprites). O iShinyDex não é
-afiliado a nenhuma dessas empresas, nem ao Dropbox.
-
-## Para quem desenvolve
-
-| Pasta | Repositório | O que é |
+| Folder | Repository | What it is |
 | --- | --- | --- |
-| `frontend/` | [ishinydex-frontend](https://github.com/nunesvictor/ishinydex-frontend) | O app (Flutter) |
-| `backend/` | [ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend) | Gera o catálogo (dados de referência, da PokéAPI) |
+| `frontend/` | [ishinydex-frontend](https://github.com/nunesvictor/ishinydex-frontend) | The app (Flutter) |
+| `backend/` | [ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend) | Builds the catalog (reference data, from PokéAPI) |
 
-Este repositório junta os dois como **git submodules**, publica o app no
-GitHub Pages a cada tag `v*` e guarda as releases. Fluxo de trabalho e
-versões: [CONTRIBUTING.md](CONTRIBUTING.md). Problemas e sugestões:
-[issues](https://github.com/nunesvictor/ishinydex/issues).
+This repository joins both as **git submodules**, publishes the app to
+GitHub Pages on each `v*` tag and holds the releases. Workflow and
+versioning: [CONTRIBUTING.md](CONTRIBUTING.md) (in Portuguese). Issues and
+ideas: [issues](https://github.com/nunesvictor/ishinydex/issues).
 
-Até a `v1.0.0`, o iShinyDex era um servidor (Django + Postgres) rodando com
-`docker compose`. A partir da `v2.0.0`, os dados ficam nos aparelhos.
+Up to `v1.0.0`, iShinyDex was a server (Django + Postgres) running with
+`docker compose`. Since `v2.0.0`, the data lives on the devices.
