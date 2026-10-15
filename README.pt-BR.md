@@ -55,6 +55,12 @@ próprio, como um app.
 3. Use sempre pelo ícone da Tela de Início. No iPhone e no iPad, o app
    instalado guarda os dados separados do Safari.
 
+> **Cuidado ao reinstalar.** No iPhone e no iPad, remover o ícone apaga os
+> dados do app instalado (e o login do Dropbox), e adicionar de novo cria um
+> app vazio. Antes de reinstalar (por exemplo, para trocar o ícone depois de
+> uma atualização), deixe a sincronização com o Dropbox ligada e conecte de
+> novo no app novo, ou use **Exportar dados** e importe o arquivo nele.
+
 **Computador (Chrome ou Edge)**
 1. Abra o [link do app](https://nunesvictor.github.io/ishinydex/).
 2. Clique no ícone de **instalar** na barra de endereço (ou procure a opção
@@ -75,7 +81,7 @@ Tudo o que você cadastra fica **no aparelho**, no armazenamento do navegador
 (ou do app instalado). Ninguém mais tem acesso, nem quem mantém o projeto.
 
 Isso também quer dizer que, se você apagar os dados do site no navegador ou
-remover o app, os dados vão junto. Por isso:
+remover o app (mesmo para instalar de novo), os dados vão junto. Por isso:
 
 ### Faça backup
 

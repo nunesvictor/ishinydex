@@ -54,6 +54,12 @@ its own icon, like an app.
 3. Always use it from the Home Screen icon. On iPhone and iPad, the
    installed app keeps its data separate from Safari.
 
+> **Careful when reinstalling.** On iPhone and iPad, removing the icon
+> deletes the installed app's data (and the Dropbox login), and adding it
+> again creates an empty app. Before reinstalling (for example, to get the
+> new icon after an update), keep Dropbox sync on and connect again in the
+> new app, or use **Export data** and import the file there.
+
 **Desktop (Chrome or Edge)**
 1. Open the [app link](https://nunesvictor.github.io/ishinydex/).
 2. Click the **install** icon in the address bar (or look for the install
@@ -76,7 +82,7 @@ Everything you register stays **on your device**, in the browser's storage
 project's maintainer.
 
 That also means that if you clear the site's data in the browser or remove
-the app, your data goes with it. So:
+the app (even to install it again), your data goes with it. So:
 
 ### Back up
 
