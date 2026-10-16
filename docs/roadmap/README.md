@@ -8,7 +8,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 | --- | --- | --- |
 | v2.14.0 | planejado (Caçadas) | [v2.14.0.md](v2.14.0.md) |
 | v2.13.0 | planejado (PersonalDex personalizado) | [v2.13.0.md](v2.13.0.md) |
-| v2.12.0 | lançado em 2026-10-15 (visual e compartilhamento), com os patches v2.12.1, v2.12.2 e v2.12.3 (2026-10-16) | [v2.12.0.md](v2.12.0.md) |
+| v2.12.0 | lançado em 2026-10-15 (visual e compartilhamento), com os patches v2.12.1 a v2.12.5 (o último em 2026-10-16) | [v2.12.0.md](v2.12.0.md) |
 | v2.11.0 | lançado em 2026-10-14 (internacionalização) | [v2.11.0.md](v2.11.0.md) |
 | v2.10.0 | lançado em 2026-10-13 | [v2.10.0.md](v2.10.0.md) |
 | v2.9.0 | lançado em 2026-10-13 | [v2.9.0.md](v2.9.0.md) |
