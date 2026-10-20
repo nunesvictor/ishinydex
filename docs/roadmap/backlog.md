@@ -15,6 +15,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | Golpes com nomes em inglês | [frontend#36](https://github.com/nunesvictor/ishinydex-frontend/issues/36) | Pré-requisito do team builder (#231): golpes e aprendizado por forma e grupo de versões no catálogo (backend primeiro), mostrados na ficha da forma. |
 | Team builder compatível com o jogo | [frontend#231](https://github.com/nunesvictor/ishinydex-frontend/issues/231) | **Depois de #36.** Times de até 6 válidos no jogo escolhido: formas, golpes, habilidade, natureza, EVs/IVs, item e Tera onde houver. Membro pode apontar para um espécime. Exporta no formato do Showdown. Registro novo `teams` (o schema sobe). Mock antes. |
 | Idioma preferido no cadastro do dex | [frontend#210](https://github.com/nunesvictor/ishinydex-frontend/issues/210) | Filtrar o idioma fora do dex (novo motivo nas Caçadas) e preencher o idioma no cadastro. Campo novo nos dados: decidir sobre o schema antes. Mock antes. |
+| Mostrar que o save tem o Shiny Charm | [frontend#317](https://github.com/nunesvictor/ishinydex-frontend/issues/317) | Levantamento de 2026-10-20. Hoje o Shiny Charm só aparece no formulário do save e nas odds. O ícone dele ao lado do nome do save: na lista de saves, no seletor ao começar uma caçada e no card da caçada. Mock antes. |
 
 ## Dados e catálogo
 | Ideia | Issue | Notas |
