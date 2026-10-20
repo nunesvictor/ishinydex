@@ -7,7 +7,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 | Versão | Status | Plano |
 | --- | --- | --- |
 | v2.14.0 | planejado (Caçadas) | [v2.14.0.md](v2.14.0.md) |
-| v2.13.0 | em andamento (topo grafite, menu do ⋯, dex pré-moldados e dex desatualizado); pré-releases beta.1 e beta.2 em 2026-10-16 | [v2.13.0.md](v2.13.0.md) |
+| v2.13.0 | em andamento (menu do ⋯, dex pré-moldados e dex desatualizado); pré-releases beta.1 a beta.4 em 2026-10-16 e 17 (o topo grafite foi testado e desfeito) | [v2.13.0.md](v2.13.0.md) |
 | v2.12.0 | lançado em 2026-10-15 (visual e compartilhamento), com os patches v2.12.1 a v2.12.7 (o último em 2026-10-16) | [v2.12.0.md](v2.12.0.md) |
 | v2.11.0 | lançado em 2026-10-14 (internacionalização) | [v2.11.0.md](v2.11.0.md) |
 | v2.10.0 | lançado em 2026-10-13 | [v2.10.0.md](v2.10.0.md) |
