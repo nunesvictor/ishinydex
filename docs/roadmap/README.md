@@ -4,6 +4,14 @@ Um plano por versão, com os itens do lote, as issues e a ordem de execução. A
 
 As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos os itens de cada versão.
 
+**Mocks** (desde a v2.17.0, decidido em 2026-10-25):
+- **Um canvas por versão**, com uma página por issue e uma página de índice com o status de cada item. O plano da versão e cada issue apontam para ele.
+- **O canvas antigo** guarda os mocks da v2.0.0 à v2.17.0 e fica como arquivo: https://claude.ai/artifact/R6eiYXXmrXtvS2PrTJYZVo. Ele bateu no limite de 40 páginas por canvas.
+- **Planejado para depois do fechamento da v2.17.0:** um canvas "Telas do app", com o app como está na `main`.
+  - Uma página por área (PersonalDex, Caçadas, Espécimes, Ajustes, Compartilhar), cada tela uma vez só, nos estados normal, pior caso real, vazio, escuro e inglês.
+  - Uma página "Fluxos" no fim, com os fluxos principais.
+  - Os mocks novos partem dele, e ele é atualizado no fechamento de cada versão.
+
 | Versão | Status | Plano |
 | --- | --- | --- |
 | v2.17.0 | em andamento (natureza neutra, sem shiny alfa, símbolos como ícones, Shiny Charm no save e escolha do tema) | [v2.17.0.md](v2.17.0.md) |
