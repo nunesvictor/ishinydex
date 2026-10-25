@@ -6,7 +6,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.16.0 | em planejamento (natureza, shiny locked, card com nome longo e geração da forma) | [v2.16.0.md](v2.16.0.md) |
+| v2.16.0 | lançado em 2026-10-24 (natureza, shiny locked, card com nome longo e geração da forma) | [v2.16.0.md](v2.16.0.md) |
 | v2.15.0 | lançado em 2026-10-22 (Caçadas) | [v2.15.0.md](v2.15.0.md) |
 | v2.14.0 | lançado em 2026-10-20 (filtro do que fecha no HOME) | [v2.14.0.md](v2.14.0.md) |
 | v2.13.0 | lançado em 2026-10-20 (dex pré-moldados, dex desatualizado e menu do ⋯; catálogo `catalog-2026.10.20`, com o padrão em 1.283 formas). O topo grafite foi testado nas betas 1 a 4 e desfeito | [v2.13.0.md](v2.13.0.md) |
