@@ -6,7 +6,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.17.0 | em andamento (natureza neutra, sem shiny alfa e símbolos como ícones) | [v2.17.0.md](v2.17.0.md) |
+| v2.17.0 | em andamento (natureza neutra, sem shiny alfa, símbolos como ícones, Shiny Charm no save e escolha do tema) | [v2.17.0.md](v2.17.0.md) |
 | v2.16.0 | lançado e testado em 2026-10-24 (natureza, shiny locked, card com nome longo e geração da forma) | [v2.16.0.md](v2.16.0.md) |
 | v2.15.0 | lançado em 2026-10-22 (Caçadas) | [v2.15.0.md](v2.15.0.md) |
 | v2.14.0 | lançado em 2026-10-20 (filtro do que fecha no HOME) | [v2.14.0.md](v2.14.0.md) |
