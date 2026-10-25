@@ -15,6 +15,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
+| v2.18.0 | em planejamento (contagem do dex depois de mudar um shiny lock) | [v2.18.0.md](v2.18.0.md) |
 | v2.17.0 | lançado em 2026-10-25 (natureza neutra, sem shiny alfa, símbolos como ícones, Shiny Charm no save e escolha do tema), com o patch v2.17.1 (shiny locks duplicados no sync) | [v2.17.0.md](v2.17.0.md) |
 | v2.16.0 | lançado e testado em 2026-10-24 (natureza, shiny locked, card com nome longo e geração da forma) | [v2.16.0.md](v2.16.0.md) |
 | v2.15.0 | lançado em 2026-10-22 (Caçadas) | [v2.15.0.md](v2.15.0.md) |
