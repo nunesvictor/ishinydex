@@ -1,0 +1,8 @@
+{
+  "name": "ishinydex-screens",
+  "private": true,
+  "description": "Capturas do app para o canvas \"Telas do app\" (tool/screens/capture.sh)",
+  "dependencies": {
+    "playwright": "1.49.1"
+  }
+}
