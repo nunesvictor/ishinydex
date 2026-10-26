@@ -7,8 +7,9 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 **Mocks** (desde a v2.17.0, decidido em 2026-10-25):
 - **Um canvas por versão**, com uma página por issue e uma página de índice com o status de cada item. O plano da versão e cada issue apontam para ele.
 - **O canvas antigo** guarda os mocks da v2.0.0 à v2.17.0 e fica como arquivo: https://claude.ai/artifact/R6eiYXXmrXtvS2PrTJYZVo. Ele bateu no limite de 40 páginas por canvas.
-- **Telas do app** (montado em 2026-10-25, na v2.17.0): https://claude.ai/artifact/Vi9vv7fxZmVqVJPyevFvpk.
-  - São capturas do app real: o build da `main` num navegador do tamanho do iPhone (402×812), com os dados do backup do usuário.
+- **Telas do app** (montado em 2026-10-25, na v2.17.0; atualizado para a v2.18.0): https://claude.ai/artifact/Vi9vv7fxZmVqVJPyevFvpk.
+  - São capturas do app real: o build da versão publicada num navegador do tamanho do iPhone (402×812), com os dados do backup do usuário.
+  - Atualizado ao fechar cada versão com `tool/screens/capture.sh <backup.json> <saída>` (fora do repositório, porque tem dados reais). As cenas ficam em `tool/screens/plan.json`; uma tela nova no canvas também entra lá.
   - Uma página por área (PersonalDex, Caçadas, Espécimes, Ajustes, Compartilhar), cada tela com as variações lado a lado: normal, escuro, inglês, vazio e, nas longas, a tela inteira.
   - Uma página "Fluxos" no fim, com os quatro fluxos principais.
   - Os mocks novos partem dele, e ele é atualizado no fechamento de cada versão.
