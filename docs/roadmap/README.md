@@ -16,7 +16,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.19.0 | planejado em 2026-10-29 (métodos de evolução, golpes da forma e busca de golpes; mocks aprovados) | [v2.19.0.md](v2.19.0.md) |
+| v2.19.0 | lançado em 2026-10-30 (métodos de evolução, golpes da forma e busca de golpes; catálogo `catalog-2026.10.30`, com os golpes num arquivo à parte), aguardando o teste no iPhone | [v2.19.0.md](v2.19.0.md) |
 | v2.18.0 | lançado e testado no iPhone em 2026-10-25 (saves: contagem do dex depois de mudar um lock, Meus saves sem repetição, o Pokémon GO como jogo e o alfa pela marca de origem), com o patch v2.18.1 em 2026-10-26 (a edição em lote diz quantos ficam sem alfa), testado no iPhone em 2026-10-29 | [v2.18.0.md](v2.18.0.md) |
 | v2.17.0 | lançado em 2026-10-25 (natureza neutra, sem shiny alfa, símbolos como ícones, Shiny Charm no save e escolha do tema), com o patch v2.17.1 (shiny locks duplicados no sync) | [v2.17.0.md](v2.17.0.md) |
 | v2.16.0 | lançado e testado em 2026-10-24 (natureza, shiny locked, card com nome longo e geração da forma) | [v2.16.0.md](v2.16.0.md) |
