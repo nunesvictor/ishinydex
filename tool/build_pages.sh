@@ -44,6 +44,14 @@ catalog_version="$(tr -d '[:space:]' < "$root/catalog.version")"
 catalog_dir="$(mktemp -d)"
 curl -fsSL -o "$catalog_dir/catalog.json" \
   "https://github.com/nunesvictor/ishinydex-backend/releases/download/$catalog_version/catalog.json"
+# Os golpes (backend#134) vêm num arquivo à parte, da mesma release, que o
+# app só baixa ao abrir a aba Golpes (frontend#36). O nome sai do
+# movesFile do catálogo; catálogo antigo, sem a chave: nada a baixar.
+moves_file="$(python3 -c 'import json, sys; print(json.load(open(sys.argv[1])).get("movesFile") or "")' "$catalog_dir/catalog.json")"
+if [[ -n "$moves_file" ]]; then
+  curl -fsSL -o "$catalog_dir/$moves_file" \
+    "https://github.com/nunesvictor/ishinydex-backend/releases/download/$catalog_version/$moves_file"
+fi
 
 cd "$app"
 flutter pub get
@@ -98,5 +106,5 @@ fi
 
 cp -r "$root/site"/. "$out"/
 mkdir -p "$out/catalog"
-cp "$catalog_dir/catalog.json" "$out/catalog/"
-echo "site em $out (versão $version, $catalog_version)"
+cp "$catalog_dir"/*.json "$out/catalog/"
+echo "site em $out (versão $version, $catalog_version${moves_file:+, $moves_file})"
