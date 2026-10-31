@@ -178,6 +178,15 @@ were checked against [Bulbapedia](https://bulbapedia.bulbagarden.net/).
 iShinyDex is not affiliated with any of these companies or sites, nor with
 Dropbox.
 
+## License
+
+The iShinyDex code (this repository, the
+[backend](https://github.com/nunesvictor/ishinydex-backend) and the
+[frontend](https://github.com/nunesvictor/ishinydex-frontend)) is under the
+[MIT license](LICENSE). The license does not cover Pokémon names, images and
+trademarks, nor third-party icons, sprites and data (see the legal notice
+above and each repository's README); those keep their own terms.
+
 ## For developers
 
 | Folder | Repository | What it is |
