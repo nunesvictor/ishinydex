@@ -17,7 +17,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 | Versão | Status | Plano |
 | --- | --- | --- |
 | v2.21.0 | vazio, sem previsão (a cobertura de tipos foi para a v2.20.0 em 2026-10-31) | [v2.21.0.md](v2.21.0.md) |
-| v2.20.0 | planejado em 2026-10-31 (team builder com o Z-A e a sinergia do time, itens seguráveis no catálogo e filtros da busca de golpes) | [v2.20.0.md](v2.20.0.md) |
+| v2.20.0 | lançado em 2026-10-31 (team builder com o Z-A e a sinergia do time, itens seguráveis no catálogo e filtros da busca de golpes; catálogo `catalog-2026.10.31`), aguardando o teste no iPhone | [v2.20.0.md](v2.20.0.md) |
 | v2.19.0 | lançado em 2026-10-30 (métodos de evolução, golpes da forma e busca de golpes; catálogo `catalog-2026.10.30`, com os golpes num arquivo à parte), aguardando o teste no iPhone | [v2.19.0.md](v2.19.0.md) |
 | v2.18.0 | lançado e testado no iPhone em 2026-10-25 (saves: contagem do dex depois de mudar um lock, Meus saves sem repetição, o Pokémon GO como jogo e o alfa pela marca de origem), com o patch v2.18.1 em 2026-10-26 (a edição em lote diz quantos ficam sem alfa), testado no iPhone em 2026-10-29 | [v2.18.0.md](v2.18.0.md) |
 | v2.17.0 | lançado em 2026-10-25 (natureza neutra, sem shiny alfa, símbolos como ícones, Shiny Charm no save e escolha do tema), com o patch v2.17.1 (shiny locks duplicados no sync) | [v2.17.0.md](v2.17.0.md) |
