@@ -17,6 +17,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
+| v2.22.0 | aberto em 2026-11-02, sem previsão (Ivy Cudgel no time e o jogo padrão da aba Golpes, já na `main`) | [v2.22.0.md](v2.22.0.md) |
 | v2.21.0 | lançado em 2026-11-01 (comparar o shiny com o normal nas caçadas), aguardando o teste no iPhone | [v2.21.0.md](v2.21.0.md) |
 | v2.20.0 | lançado em 2026-10-31 (team builder com o Z-A e a sinergia do time, itens seguráveis no catálogo e filtros da busca de golpes; catálogo `catalog-2026.10.31`), teste no iPhone encerrado em 2026-11-01 | [v2.20.0.md](v2.20.0.md) |
 | v2.19.0 | lançado em 2026-10-30 (métodos de evolução, golpes da forma e busca de golpes; catálogo `catalog-2026.10.30`, com os golpes num arquivo à parte), teste no iPhone encerrado em 2026-11-01 | [v2.19.0.md](v2.19.0.md) |
