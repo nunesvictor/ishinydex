@@ -12,6 +12,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
   - Atualizado ao fechar cada versão com `tool/screens/capture.sh <backup.json> <saída>` (fora do repositório, porque tem dados reais). As cenas ficam em `tool/screens/plan.json`; uma tela nova no canvas também entra lá.
   - Uma página por área (PersonalDex, Caçadas, Espécimes, Ajustes, Compartilhar), cada tela com as variações lado a lado: normal, escuro, inglês, vazio e, nas longas, a tela inteira.
   - Uma página "Fluxos" no fim, com os quatro fluxos principais.
+- **Prints do README** (#251): `tool/screens/showcase.sh` gera um arquivo de vitrine com dados inventados (pelo `frontend/tool/showcase`, sobre o catálogo de `catalog.version`), captura as cenas `readme-*` e põe os WebP em `docs/screenshots/`. Sem dado real, as imagens ficam no repositório; refazer quando uma tela do README mudar.
   - Os mocks novos partem dele, e ele é atualizado no fechamento de cada versão.
 
 | Versão | Status | Plano |

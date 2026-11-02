@@ -36,10 +36,32 @@ data, which is gone when you reload the page.
   game's method, the odds with the Shiny Charm, and pauses. On "Found it!",
   the specimen comes pre-filled, and the app offers a **hunt card** to
   share. Hunts don't need a dex.
+- **Shiny vs. normal:** tap a hunt's sprite to compare the shiny with the
+  normal one, side by side or holding your finger to swap them in place. For
+  the subtle ones (Zapdos, Phione), the **Difference** mode paints in pink
+  what really changes and shows the main colors before and after.
+- **Moves:** what each form learns in each game (level, TM, egg, tutor),
+  with power, accuracy and PP, and a search across all moves by type,
+  category, target and who learns them.
+- **Teams:** teams of up to 6 that are valid in the game you pick (third
+  generation on, Legends: Z-A included): form, moves, ability, nature, held
+  item, Tera, EVs and IVs, with the stats calculated. Link a member to a
+  specimen from your inventory and export the team to Showdown.
+- **Team synergy:** a score from 0 to 100 (defense, attack and balance) with
+  what lowers it, each member's Tera on its own, and suggestions: moves the
+  team already learns and forms that close the weak spots, the ones you own
+  first.
 - **Trainers and saves:** your OTs and the saves of each game, which tell in
   which games each form can be hunted and which methods apply.
 - **Shiny locks:** forms with no shiny (or distribution only) are marked,
   and you can add your own.
+
+<table>
+<tr><td align="center" width="33%"><img src="docs/screenshots/readme-dex-E.webp" width="240" alt="A HOME box of the shiny dex, with what is missing faded"><br><sub>PersonalDex</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-hunts-E.webp" width="240" alt="Two hunts in progress, with the counter and the odds"><br><sub>Hunts</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-compare-E.webp" width="240" alt="The Difference mode: Zapdos, where only the eyes really change"><br><sub>Shiny vs. normal (Difference)</sub></td></tr>
+<tr><td align="center" width="33%"><img src="docs/screenshots/readme-moves-E.webp" width="240" alt="Bulbasaur's moves in Scarlet / Violet"><br><sub>Moves</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-team-E.webp" width="240" alt="A Legends: Z-A team with the synergy score"><br><sub>Teams</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-synergy-E.webp" width="240" alt="The synergy of a Scarlet / Violet team: score 85 and what lowers it"><br><sub>Team synergy</sub></td></tr>
+</table>
+
+<sub>Screens from the app with made-up sample data.</sub>
 
 ## Install
 

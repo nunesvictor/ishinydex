@@ -68,5 +68,17 @@
  {"name": "sh-cacada-D", "opts": {"dark": true}, "steps": [["go", "/hunts"], ["tap", "Concluídas"], ["tap", "Compartilhar"], ["shot"]]},
  {"name": "sh-cacada-E", "opts": {"en": true}, "steps": [["go", "/hunts"], ["tap", "Done"], ["tap", "Share"], ["shot"]]},
  {"name": "sh-especime", "steps": [["go", "/specimens/709"], ["scroll", 800, 200, 500], ["tap", "Compartilhar"], ["shot"]]},
- {"name": "fx-encontrei", "steps": [["go", "/hunts"], ["tap", "Mais ações"], ["tap", "Encontrei"], ["shot"]]}
+ {"name": "fx-encontrei", "steps": [["go", "/hunts"], ["tap", "Mais ações"], ["tap", "Encontrei"], ["shot"]]},
+ {"name": "readme-dex", "steps": [["go", "/dexes/1"], ["shot"]]},
+ {"name": "readme-dex-E", "opts": {"en": true}, "steps": [["go", "/dexes/1"], ["shot"]]},
+ {"name": "readme-hunts", "steps": [["go", "/hunts?tab=active"], ["shot"]]},
+ {"name": "readme-hunts-E", "opts": {"en": true}, "steps": [["go", "/hunts?tab=active"], ["shot"]]},
+ {"name": "readme-compare", "steps": [["go", "/hunts?tab=active"], ["tap", "Comparar o shiny com o normal: Zapdos"], ["tap", "Diferença", 4000], ["shot"]]},
+ {"name": "readme-compare-E", "opts": {"en": true}, "steps": [["go", "/hunts?tab=active"], ["tap", "Compare the shiny and the normal: Zapdos"], ["tap", "Difference", 4000], ["shot"]]},
+ {"name": "readme-team", "steps": [["go", "/teams/2"], ["shot"]]},
+ {"name": "readme-team-E", "opts": {"en": true}, "steps": [["go", "/teams/2"], ["shot"]]},
+ {"name": "readme-synergy", "steps": [["go", "/teams/1/synergy"], ["shot"]]},
+ {"name": "readme-synergy-E", "opts": {"en": true}, "steps": [["go", "/teams/1/synergy"], ["shot"]]},
+ {"name": "readme-moves", "steps": [["go", "/dexes/1"], ["tap", "Bulbasaur"], ["tap", "Golpes", 4000], ["tap", "Jogo"], ["tap", "Scarlet / Violet", 3000], ["shot"]]},
+ {"name": "readme-moves-E", "opts": {"en": true}, "steps": [["go", "/dexes/1"], ["tap", "Bulbasaur"], ["tap", "Moves", 4000], ["tap", "Game"], ["tap", "Scarlet / Violet", 3000], ["shot"]]}
 ]
