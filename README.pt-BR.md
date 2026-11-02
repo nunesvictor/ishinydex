@@ -92,7 +92,7 @@ Junte várias formas para achar os golpes que todas aprendem.
 
 ### Times que valem no seu jogo
 
-<img align="right" width="260" src="docs/screenshots/readme-team.webp" alt="Um time do Legends: Z-A com mega pedras, os golpes de cada membro e a nota da sinergia">
+<img align="right" width="260" src="docs/screenshots/readme-team.webp" alt="Um time de Scarlet / Violet com o Tera, o item, a habilidade e os golpes de cada membro, e a nota da sinergia">
 
 Monte times de até seis para o jogo que você joga, do Ruby / Sapphire ao
 Scarlet / Violet, Legends: Z-A incluído. Só aparecem as formas, os golpes,
