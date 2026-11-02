@@ -92,7 +92,7 @@ several forms to find the moves they all learn.
 
 ### Teams that are legal in your game
 
-<img align="right" width="260" src="docs/screenshots/readme-team-E.webp" alt="A Legends: Z-A team with Mega Stones, the moves of each member and the synergy score">
+<img align="right" width="260" src="docs/screenshots/readme-team-E.webp" alt="A Scarlet / Violet team with each member's Tera, item, ability and moves, and the synergy score">
 
 Build teams of up to six for the game you play, from Ruby / Sapphire to
 Scarlet / Violet, Legends: Z-A included. Only the forms, moves, abilities and
