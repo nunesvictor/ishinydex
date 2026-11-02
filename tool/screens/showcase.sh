@@ -5,8 +5,8 @@
 #
 # Gera o arquivo de vitrine pelo frontend/tool/showcase (as regras do app
 # sobre o catálogo de catalog.version: nenhum dado de alguém), captura as
-# cenas readme-* de plan.json com o capture.sh e põe os WebP em
-# docs/screenshots/. Como os dados são inventados, as imagens podem ir para
+# cenas readme-* de plan.json com o capture.sh e põe em docs/screenshots/
+# os cartões recortados e a imagem de abertura (showcase_images.py). Como os dados são inventados, as imagens podem ir para
 # o repositório.
 #
 # Precisa do mesmo que o capture.sh: Flutter, Node (npm) e Python 3 com o
@@ -28,5 +28,6 @@ curl -fsSL -o "$work/catalog.json" \
 )
 "$here/capture.sh" "$work/showcase.json" "$work/out" readme-
 mkdir -p "$root/docs/screenshots"
-cp "$work/out/webp/"readme-*.webp "$root/docs/screenshots/"
+# Os cartões recortados e a abertura (showcase_images.py).
+python3 "$here/showcase_images.py" "$work/out/png" "$root/docs/screenshots"
 echo "prints em docs/screenshots/"
