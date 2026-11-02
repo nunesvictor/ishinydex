@@ -1,168 +1,209 @@
-# iShinyDex
+<h1 align="center">iShinyDex</h1>
 
-**English** · [Português](README.pt-BR.md)
+<p align="center">
+  <b>Your shiny dex, your hunts and your teams, in the style of Pokémon HOME.</b><br>
+  Free · No account · Your data stays on your device · Works offline
+</p>
 
-Organize your Pokémon collection in the style of **Pokémon HOME** boxes and
-keep track of your shiny hunts. Build your PersonalDex (with the standard
-set of forms, regular or shiny), see what's missing in each box, register
-your specimens (shiny, alpha, Poké Ball, trainer, capture date…) and count
-the encounters of each hunt until the shiny shows up.
+<p align="center">
+  <a href="https://nunesvictor.github.io/ishinydex/"><b>▶️ Open iShinyDex</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://nunesvictor.github.io/ishinydex/demo/">Try the demo</a>
+  &nbsp;·&nbsp;
+  <b>English</b> · <a href="README.pt-BR.md">Português</a>
+</p>
 
-### ▶️ [Open iShinyDex](https://nunesvictor.github.io/ishinydex/)
+<p align="center">
+  <img src="docs/screenshots/readme-hero-E.webp" width="760" alt="Three screens of iShinyDex: a HOME box of the shiny dex, the comparison of a regular and a shiny Zapdos, and the synergy score of a team">
+</p>
 
-Just want a look? The
-[**demo**](https://nunesvictor.github.io/ishinydex/demo/) comes with sample
-data, which is gone when you reload the page.
+iShinyDex is for people who hunt shinies and keep a living dex. It lays out
+every form in 30-slot boxes the way you'd organize them in HOME, counts your
+hunts until the shiny shows up, helps you tell a shiny from the regular one
+when they're nearly identical, and builds teams that are legal in the game
+you play. It runs in the browser and installs as an app on iPhone, iPad and
+desktop, in English and Portuguese.
 
-- **No account, no server:** your data stays on your device.
-- **Works offline**, once opened.
-- **Installs as an app** on iPhone, iPad and desktop.
-- **Optional sync** with your Dropbox, to have the same data on all your
-  devices.
-- **In English and Portuguese.**
+The [demo](https://nunesvictor.github.io/ishinydex/demo/) comes with sample
+data, so you can look around before registering anything.
 
 ## What you can do
 
-- **PersonalDex:** 30-slot boxes, like in HOME, with progress per box and
-  per generation and a highlight of what's missing. Each slot shows the form
-  and the deposited specimen, with base stats, type matchups, the evolution
-  line and which games it appears in. Swipe to move from one slot to the
-  next.
+### Your dex, box by box
+
+<img align="right" width="260" src="docs/screenshots/readme-dex-E.webp" alt="A HOME box of the shiny dex: owned slots in full color, missing ones faded">
+
+Pick a set of forms (the full one with every regional and alternate form,
+or a lighter one), regular or shiny, and the app places them in 30-slot
+boxes, in the same order you would use in HOME.
+
+What you already have shows in full color; what's missing fades out. Progress
+shows per box and per generation, and **Highlight missing** takes you straight
+to the gaps.
+
+Tap a slot for the form's sheet: base stats, type matchups, the evolution
+line with how each step evolves, and the games where it appears.
+
+<br clear="right">
+
+### Hunts that keep count
+
+<img align="left" width="260" src="docs/screenshots/readme-hunts-E.webp" alt="Two hunts in progress, Zapdos and Phione, with the counter, the method and the odds">
+
+Start a hunt from anything still missing in your shiny dex, or from scratch.
+You don't need a dex to hunt.
+
+Count with **+1** (hold to count fast) or run a timer. Choose the game and
+the method, and the app shows the odds with the Shiny Charm and how lucky
+you've been so far. Pause, switch to another hunt and come back without
+losing a count.
+
+When the shiny shows up, tap **Found it!**: the specimen comes pre-filled,
+and you get a hunt card to share.
+
+<br clear="left">
+
+### Is it really shiny?
+
+<img align="right" width="260" src="docs/screenshots/readme-compare-E.webp" alt="The Difference mode on Zapdos: the pink areas are the only parts that change, and the main colors are almost the same">
+
+Some shinies are almost identical to the regular form. Tap a hunt's sprite
+to see both side by side, or hold your finger on the shiny to swap it for
+the regular one in the same spot.
+
+For the hard cases there's the **Difference** mode. The app compares the
+two images pixel by pixel, paints in pink what actually changes and lists
+the main colors before and after. On Zapdos, only 6% of the image really
+changes: the eyes.
+
+<br clear="right">
+
+### Every move, in every game
+
+<img align="left" width="260" src="docs/screenshots/readme-moves-E.webp" alt="Bulbasaur's moves in Scarlet / Violet, by level, with power, accuracy and PP">
+
+See what each form learns in each game, by level, TM, egg or tutor, with
+power, accuracy and PP as they were in that game.
+
+Search every move by type, category and target, and see who learns it. Add
+several forms to find the moves they all learn.
+
+<br clear="left">
+
+### Teams that are legal in your game
+
+<img align="right" width="260" src="docs/screenshots/readme-team-E.webp" alt="A Legends: Z-A team with Mega Stones, the moves of each member and the synergy score">
+
+Build teams of up to six for the game you play, from Ruby / Sapphire to
+Scarlet / Violet, Legends: Z-A included. Only the forms, moves, abilities and
+held items of that game show up.
+
+Set the nature, Tera, EVs and IVs, and the stats are calculated at the
+team's level. Link a member to a specimen you own, and export the team to
+Showdown in one tap.
+
+<br clear="right">
+
+### How good is your team?
+
+<img align="left" width="260" src="docs/screenshots/readme-synergy-E.webp" alt="The synergy of a Scarlet / Violet team: score 85, with each point lost explained">
+
+**Synergy** scores the team from 0 to 100, split into defense, attack and
+balance, and explains every point it loses: a weakness several members
+share, 4× weaknesses, types no move hits hard.
+
+It shows what each member's Tera would change, and it suggests fixes: moves
+your team already learns, and forms that close the gaps, starting with the
+ones you own.
+
+<br clear="left">
+
+### And also
+
 - **Specimens:** an inventory of everything you own, with filters (rarity,
-  game, status, type, generation…), bulk editing, sending to a game and the
-  list of what's **Away from HOME**.
-- **Hunts:** what's still missing as a shiny in your shiny dex, and your
-  hunts in progress, with a counter (+1, hold to count fast) or a timer, the
-  game's method, the odds with the Shiny Charm, and pauses. On "Found it!",
-  the specimen comes pre-filled, and the app offers a **hunt card** to
-  share. Hunts don't need a dex.
-- **Shiny vs. normal:** tap a hunt's sprite to compare the shiny with the
-  normal one, side by side or holding your finger to swap them in place. For
-  the subtle ones (Zapdos, Phione), the **Difference** mode paints in pink
-  what really changes and shows the main colors before and after.
-- **Moves:** what each form learns in each game (level, TM, egg, tutor),
-  with power, accuracy and PP, and a search across all moves by type,
-  category, target and who learns them.
-- **Teams:** teams of up to 6 that are valid in the game you pick (third
-  generation on, Legends: Z-A included): form, moves, ability, nature, held
-  item, Tera, EVs and IVs, with the stats calculated. Link a member to a
-  specimen from your inventory and export the team to Showdown.
-- **Team synergy:** a score from 0 to 100 (defense, attack and balance) with
-  what lowers it, each member's Tera on its own, and suggestions: moves the
-  team already learns and forms that close the weak spots, the ones you own
-  first.
-- **Trainers and saves:** your OTs and the saves of each game, which tell in
-  which games each form can be hunted and which methods apply.
-- **Shiny locks:** forms with no shiny (or distribution only) are marked,
-  and you can add your own.
+  game, status, type, generation…), bulk editing and the list of what's
+  **Away from HOME**.
+- **Trainers and saves:** your OTs and the saves of each game. They tell
+  where each form can be hunted and which methods apply.
+- **Shiny locks:** forms with no shiny, or distribution only, are marked.
+  You can add your own.
 
-<table>
-<tr><td align="center" width="33%"><img src="docs/screenshots/readme-dex-E.webp" width="240" alt="A HOME box of the shiny dex, with what is missing faded"><br><sub>PersonalDex</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-hunts-E.webp" width="240" alt="Two hunts in progress, with the counter and the odds"><br><sub>Hunts</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-compare-E.webp" width="240" alt="The Difference mode: Zapdos, where only the eyes really change"><br><sub>Shiny vs. normal (Difference)</sub></td></tr>
-<tr><td align="center" width="33%"><img src="docs/screenshots/readme-moves-E.webp" width="240" alt="Bulbasaur's moves in Scarlet / Violet"><br><sub>Moves</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-team-E.webp" width="240" alt="A Legends: Z-A team with the synergy score"><br><sub>Teams</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-synergy-E.webp" width="240" alt="The synergy of a Scarlet / Violet team: score 85 and what lowers it"><br><sub>Team synergy</sub></td></tr>
-</table>
+<sub>The screenshots use made-up sample data.</sub>
 
-<sub>Screens from the app with made-up sample data.</sub>
+## Get it on your device
 
-## Install
+iShinyDex runs in the browser. Installed, it opens full screen with its own
+icon, like an app.
 
-iShinyDex runs in the browser. Once installed, it opens full screen, with
-its own icon, like an app.
+**iPhone and iPad:** open the [app](https://nunesvictor.github.io/ishinydex/)
+in **Safari** → **Share** (on iOS 26 and later, in the **⋯** menu next to the
+address) → **Add to Home Screen**. Always use it from that icon: the
+installed app keeps its data apart from Safari.
 
-**iPhone and iPad**
-1. Open the [app link](https://nunesvictor.github.io/ishinydex/) in
-   **Safari**.
-2. Tap **Share** (the square with the arrow; on iOS 26 and later, it's in
-   the **⋯** menu next to the address) → **Add to Home Screen** → **Add**.
-3. Always use it from the Home Screen icon. On iPhone and iPad, the
-   installed app keeps its data separate from Safari.
+> [!WARNING]
+> On iPhone and iPad, removing the icon deletes the app's data, and adding
+> it again creates an empty app. Before reinstalling, keep Dropbox sync on,
+> or use **Export data** and import the file in the new app.
 
-> **Careful when reinstalling.** On iPhone and iPad, removing the icon
-> deletes the installed app's data (and the Dropbox login), and adding it
-> again creates an empty app. Before reinstalling (for example, to get the
-> new icon after an update), keep Dropbox sync on and connect again in the
-> new app, or use **Export data** and import the file there.
+**Desktop (Chrome or Edge):** open the
+[app](https://nunesvictor.github.io/ishinydex/) and click **Install** in the
+address bar.
 
-**Desktop (Chrome or Edge)**
-1. Open the [app link](https://nunesvictor.github.io/ishinydex/).
-2. Click the **install** icon in the address bar (or look for the install
-   option in the browser's ⋮ menu).
+When a new version is out, the app offers a **Reload** button. The language
+follows your device; change it in **Settings → Language**.
 
-You can also use it right in the browser, without installing.
+## Your data stays yours
 
-**Updates:** when a new version is out, the app tells you ("A new version of
-iShinyDex is available") with a **Reload** button. The installed version is
-shown in **Settings → About iShinyDex**.
+There's no server and no account. Everything you register lives on your
+device, and nobody else can see it, not even the project's maintainer. No
+tracking, no analytics, no ads: see the
+[privacy policy](https://nunesvictor.github.io/ishinydex/privacy/).
 
-**Language:** the app follows your device's language (English or
-Portuguese; English for any other). To change it, use **Settings →
-Language**.
+Because the data lives on the device, clearing the site's data or removing
+the app takes it along. Two ways to keep it safe:
 
-## Your data
+- **Export and import** (Settings → Your data): one `.json` file with
+  everything. On import, you choose to **replace** this device's data or
+  **merge** both; when the same record changed on both sides, the newest
+  change wins. The same file moves your data to another device.
+- **Sync with Dropbox** (optional): your desktop, iPhone and iPad share the
+  same data, with an automatic backup in your own account.
 
-Everything you register stays **on your device**, in the browser's storage
-(or the installed app's). Nobody else has access to it, not even the
-project's maintainer.
-
-That also means that if you clear the site's data in the browser or remove
-the app (even to install it again), your data goes with it. So:
-
-### Back up
-
-In **Settings → Your data**:
-- **Export data** downloads a `.json` file with everything. On iPhone and
-  iPad, you can save it to iCloud Drive (**Save to Files**).
-- **Import data** reads an exported file and shows a summary before
-  applying it:
-  - **Replace this device's data** makes the device exactly like the file;
-  - **Merge with this device's data** keeps both sides; if the same record
-    changed on both, the most recent change wins.
-
-The same file also moves your data to another device without Dropbox.
-
-## Sync with Dropbox (optional)
-
-With Dropbox on, your desktop, iPhone and iPad share the same data, and you
-get an automatic backup in your own account.
+<details>
+<summary>How Dropbox sync works</summary>
 
 1. In **Settings → Your data → Sync**, tap **Connect to Dropbox** and
-   authorize it on the Dropbox site.
-2. Repeat on each device. If the device already has data and so does
-   Dropbox, the app asks what to do: **Merge both** (recommended), **Use
-   only Dropbox's** or **Use only this device's**.
+   authorize it.
+2. Repeat on each device. If both the device and Dropbox already have data,
+   the app asks: **Merge both** (recommended), **Use only Dropbox's** or
+   **Use only this device's**.
 
-From then on, the app syncs on its own: when it opens, when you come back
-to it, a few seconds after each change and when you pull the dex list to
-refresh. There's also a **Sync now** button. Offline, it keeps your changes
-and sends them when the connection is back.
+From then on it syncs on its own: when the app opens, when you come back to
+it, a few seconds after each change and when you pull the dex list to
+refresh. There's also a **Sync now** button. Offline, changes wait for the
+connection.
 
 - The app only sees **its own folder**, inside `Apps` in your Dropbox, where
-  it writes a single file (`ishinydex.json`). It can't see any other file of
-  yours.
-- **Disconnect** (on the same screen) only turns sync off: your data stays
-  on the device and in Dropbox.
-- If you see "Couldn't sync" because access expired, disconnect and
-  connect again.
+  it writes a single file (`ishinydex.json`).
+- **Disconnect** only turns sync off: the data stays on the device and in
+  Dropbox.
+- If you see "Couldn't sync" because access expired, disconnect and connect
+  again.
 
-## Privacy
-
-iShinyDex has no server, no account, no tracking cookies, no usage
-analytics and no ads. The hunt card is made on your device and only leaves
-it if you share it. Details in the
-[**privacy policy**](https://nunesvictor.github.io/ishinydex/privacy/)
-(in Portuguese: [política de privacidade](https://nunesvictor.github.io/ishinydex/privacidade/)).
+</details>
 
 ## Host your own copy
 
-The link above is the copy published by the project's maintainer. You can
-publish your own, for free, on your account's GitHub Pages: the data of
-whoever uses your copy stays on their devices, and the app never talks to
-the original copy. (Only the build downloads the catalog from the
-[ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend/releases)
-releases.)
+The link above is the maintainer's copy. You can publish your own, for
+free, on your GitHub Pages: the data of whoever uses it stays on their
+devices, and your copy never talks to this one.
+
+<details>
+<summary>Step by step</summary>
 
 1. **Fork** this repository on GitHub.
-2. In the fork, open the **Actions** tab and enable the workflows (GitHub
-   turns them off in forks).
+2. In the fork, open **Actions** and enable the workflows (GitHub turns them
+   off in forks).
 3. In **Settings → Pages**, choose **Source: GitHub Actions**.
 4. Publish: **Actions → Pages → Run workflow** (on `main`). The app will be
    at `https://<your-user>.github.io/<repository-name>/`. To also publish
@@ -187,18 +228,25 @@ releases.)
    console (up to 500 accounts; from 50 on, Dropbox requires the production
    request).
 
+Only the build downloads the catalog, from the
+[ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend/releases)
+releases.
+
+</details>
+
 ## Legal notice
 
 iShinyDex is a free, non-profit fan project. Pokémon and the related names,
 images and trademarks are property of Nintendo, Creatures, GAME FREAK and
 The Pokémon Company. Reference data comes from [PokéAPI](https://pokeapi.co/)
 and images from the [PokeAPI/sprites](https://github.com/PokeAPI/sprites)
-repository. The game, type and origin mark icons, in the Pokémon HOME
-style, come from the [Bulbagarden Archives](https://archives.bulbagarden.net/),
-and the curated lists (shiny locks, shiny methods and odds, forms per game)
-were checked against [Bulbapedia](https://bulbapedia.bulbagarden.net/).
-iShinyDex is not affiliated with any of these companies or sites, nor with
-Dropbox.
+repository. The held items of each game and the Legends: Z-A moves come from
+[Pokémon Showdown](https://github.com/smogon/pokemon-showdown) (MIT). The
+game, type and origin mark icons, in the Pokémon HOME style, come from the
+[Bulbagarden Archives](https://archives.bulbagarden.net/), and the curated
+lists (shiny locks, shiny methods and odds, forms per game) were checked
+against [Bulbapedia](https://bulbapedia.bulbagarden.net/). iShinyDex is not
+affiliated with any of these companies or sites, nor with Dropbox.
 
 ## License
 
@@ -214,7 +262,7 @@ above and each repository's README); those keep their own terms.
 | Folder | Repository | What it is |
 | --- | --- | --- |
 | `frontend/` | [ishinydex-frontend](https://github.com/nunesvictor/ishinydex-frontend) | The app (Flutter) |
-| `backend/` | [ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend) | Builds the catalog (reference data, from PokéAPI) |
+| `backend/` | [ishinydex-backend](https://github.com/nunesvictor/ishinydex-backend) | Builds the catalog (reference data, from PokéAPI and Showdown) |
 
 This repository joins both as **git submodules**, publishes the app to
 GitHub Pages on each `v*` tag and holds the releases. Workflow and
