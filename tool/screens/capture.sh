@@ -43,6 +43,13 @@ catalog_version="$(tr -d '[:space:]' < "$root/catalog.version")"
 mkdir -p "$site/catalog"
 curl -fsSL -o "$site/catalog/catalog.json" \
   "https://github.com/nunesvictor/ishinydex-backend/releases/download/$catalog_version/catalog.json"
+# E o arquivo dos golpes ao lado, como no tool/build_pages.sh (sem ele, as
+# telas de golpes e de times dizem que não deu para baixar).
+moves_file="$(python3 -c 'import json, sys; print(json.load(open(sys.argv[1])).get("movesFile") or "")' "$site/catalog/catalog.json")"
+if [[ -n "$moves_file" ]]; then
+  curl -fsSL -o "$site/catalog/$moves_file" \
+    "https://github.com/nunesvictor/ishinydex-backend/releases/download/$catalog_version/$moves_file"
+fi
 
 (
   cd "$root/frontend"

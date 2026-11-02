@@ -36,10 +36,32 @@ dados de exemplo, que somem ao recarregar a página.
   o método do jogo, as odds com o Shiny Charm e as pausas. No "Encontrei!",
   o espécime já sai preenchido, e o app oferece um **card da caçada** para
   compartilhar. As caçadas não dependem de ter um dex.
+- **Shiny × normal:** toque no sprite de uma caçada para comparar o shiny
+  com o normal, lado a lado ou segurando o dedo para trocar um pelo outro no
+  mesmo lugar. Nos casos sutis (Zapdos, Phione), o modo **Diferença** pinta
+  de rosa o que muda de verdade e mostra as cores principais, antes e depois.
+- **Golpes:** o que cada forma aprende em cada jogo (nível, TM, ovo, tutor),
+  com poder, precisão e PP, e a busca em todos os golpes por tipo,
+  categoria, alvo e quem aprende.
+- **Times:** times de até 6 que valem no jogo escolhido (da 3ª geração em
+  diante, Legends: Z-A incluído): forma, golpes, habilidade, natureza, item,
+  Tera, EVs e IVs, com os stats calculados. Ligue um membro a um espécime do
+  inventário e exporte o time para o Showdown.
+- **Sinergia do time:** uma nota de 0 a 100 (defesa, ataque e equilíbrio)
+  com o que tira pontos, o Tera de cada membro sozinho e sugestões: golpes
+  que o time já aprende e formas que fecham os buracos, as do seu inventário
+  primeiro.
 - **Treinadores e saves:** os seus OTs e os saves de cada jogo, que dizem em
   quais jogos cada forma pode ser caçada e quais métodos valem.
 - **Shiny locks:** as formas que não têm shiny (ou só por distribuição)
   ficam marcadas, e você pode cadastrar outras.
+
+<table>
+<tr><td align="center" width="33%"><img src="docs/screenshots/readme-dex.webp" width="240" alt="Uma box do HOME no shiny dex, com o que falta apagado"><br><sub>PersonalDex</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-hunts.webp" width="240" alt="Duas caçadas em andamento, com o contador e as odds"><br><sub>Caçadas</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-compare.webp" width="240" alt="O modo Diferença: o Zapdos, em que só os olhos mudam de verdade"><br><sub>Shiny × normal (Diferença)</sub></td></tr>
+<tr><td align="center" width="33%"><img src="docs/screenshots/readme-moves.webp" width="240" alt="Os golpes do Bulbasaur em Scarlet / Violet"><br><sub>Golpes</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-team.webp" width="240" alt="Um time do Legends: Z-A, com a nota da sinergia"><br><sub>Times</sub></td><td align="center" width="33%"><img src="docs/screenshots/readme-synergy.webp" width="240" alt="A sinergia de um time de Scarlet / Violet: nota 85 e o que tira pontos"><br><sub>Sinergia do time</sub></td></tr>
+</table>
+
+<sub>Telas do app com dados de exemplo inventados.</sub>
 
 ## Instalar
 
