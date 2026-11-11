@@ -17,7 +17,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.22.0 | planejado em 2026-11-02 (lista de espécimes mais rápida, gênero validado, slots vazios fora do arquivo e limpeza das exclusões; schema 7) | [v2.22.0.md](v2.22.0.md) |
+| v2.22.0 | lançado em 2026-11-10 (lista de espécimes mais rápida, gênero validado, slots vazios fora do arquivo, limpeza das exclusões e ações do cartão de caçada alinhadas; schema 7), aguardando o teste no iPhone | [v2.22.0.md](v2.22.0.md) |
 | v2.21.1 | patch lançado em 2026-11-02 (a restauração dos dados à prova de conflito no sync, com o Ivy Cudgel e o jogo padrão da aba Golpes), aguardando o teste no iPhone | [v2.21.1.md](v2.21.1.md) |
 | v2.21.0 | lançado em 2026-11-01 (comparar o shiny com o normal nas caçadas), aguardando o teste no iPhone | [v2.21.0.md](v2.21.0.md) |
 | v2.20.0 | lançado em 2026-10-31 (team builder com o Z-A e a sinergia do time, itens seguráveis no catálogo e filtros da busca de golpes; catálogo `catalog-2026.10.31`), teste no iPhone encerrado em 2026-11-01 | [v2.20.0.md](v2.20.0.md) |
