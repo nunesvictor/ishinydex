@@ -19,7 +19,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # As mesmas versões da CI (FLUTTER_VERSION nos workflows, PYTHON_VERSION no
 # backend). O Postgres é o do sistema (16; a CI usa o 17).
-FLUTTER_VERSION=3.47.2
+FLUTTER_VERSION=3.50.0
 PYTHON_VERSION=3.14
 FLUTTER_HOME=/opt/flutter
 # Onde a nuvem clona os repositórios, lado a lado.
