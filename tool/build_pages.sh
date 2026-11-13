@@ -71,17 +71,23 @@ build() {
     --base-href "$base" "${names[@]}" \
     --dart-define=APP_VERSION="$version" "$@"
   local web="$app/build/web" hash
+  # O motor (canvaskit/) também entra no hash e em v/<hash>/ (frontend#404):
+  # em canvaskit/, o endereço era o mesmo em toda versão, e o service worker
+  # da versão anterior servia o motor antigo do cache; na troca do Flutter,
+  # o app novo não casava com ele e parava no splash. O flutter_bootstrap.js
+  # o carrega de v/<hash>/canvaskit/.
   hash=$({ find "$web" -maxdepth 1 -type f -name 'main.dart.*' -print0
-           find "$web/assets" -type f -print0; } \
+           find "$web/assets" "$web/canvaskit" -type f -print0; } \
          | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-12)
   mkdir -p "$web/v/$hash"
-  mv "$web"/main.dart.* "$web/assets" "$web/v/$hash/"
+  mv "$web"/main.dart.* "$web/assets" "$web/canvaskit" "$web/v/$hash/"
   # O service worker (frontend web/sw.js) usa a mesma versão no nome do
   # cache.
   sed -i "s/__BUILD_VERSION__/$hash/" "$web/flutter_bootstrap.js" "$web/sw.js"
   grep -q "'$hash'" "$web/flutter_bootstrap.js"
   grep -q "'$hash'" "$web/sw.js"
   grep -qF '"useLocalCanvasKit":true' "$web/flutter_bootstrap.js"
+  grep -qF 'canvasKitBaseUrl: `${base}canvaskit/`' "$web/flutter_bootstrap.js"
   mkdir -p "$dest"
   cp -r "$web"/. "$dest"/
   echo "$dest: build $hash"
