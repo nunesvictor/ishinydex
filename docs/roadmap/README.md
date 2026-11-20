@@ -17,8 +17,8 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.24.0 | planejada (o formulário de espécime: gênero da forma com ♂/♀, busca no celular, efeito da natureza e o idioma do save), mocks antes | [v2.24.0.md](v2.24.0.md) |
-| v2.23.0 | em andamento (Flutter 3.50 e Dart 3.14: `material_ui`, Wasm no Safari e SafeArea), betas para o teste no iPhone; a release espera o 3.50.1 | [v2.23.0.md](v2.23.0.md) |
+| v2.24.0 | lançado em 2026-11-20 (o formulário de espécime: gênero da forma com ♂/♀, busca no celular, efeito da natureza e o idioma do save; schema 8), já no Flutter 3.50.1 e com a v2.23.0 dentro, aguardando o teste no iPhone | [v2.24.0.md](v2.24.0.md) |
+| v2.23.0 | betas 1 a 3 (Flutter 3.50 e Dart 3.14: `material_ui`, Wasm no Safari e SafeArea); sem release final própria: saiu dentro da v2.24.0, já no 3.50.1 (2026-11-20) | [v2.23.0.md](v2.23.0.md) |
 | v2.22.0 | lançado em 2026-11-10 (lista de espécimes mais rápida, gênero validado, slots vazios fora do arquivo, limpeza das exclusões e ações do cartão de caçada alinhadas; schema 7), aguardando o teste no iPhone | [v2.22.0.md](v2.22.0.md) |
 | v2.21.1 | patch lançado em 2026-11-02 (a restauração dos dados à prova de conflito no sync, com o Ivy Cudgel e o jogo padrão da aba Golpes), aguardando o teste no iPhone | [v2.21.1.md](v2.21.1.md) |
 | v2.21.0 | lançado em 2026-11-01 (comparar o shiny com o normal nas caçadas), aguardando o teste no iPhone | [v2.21.0.md](v2.21.0.md) |

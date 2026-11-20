@@ -37,7 +37,7 @@ concurrency:
 
 env:
   # A mesma versão do CI e do Dockerfile do frontend.
-  FLUTTER_VERSION: 3.50.0
+  FLUTTER_VERSION: 3.50.1
 
 jobs:
   deploy:
