@@ -25,4 +25,5 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | --- | --- | --- |
 | Releases com binários: Linux, Windows, Android e macOS | [#50](https://github.com/nunesvictor/ishinydex/issues/50) | Ligado à meta do app nativo. |
 | Documentação técnica separada do README | [#49](https://github.com/nunesvictor/ishinydex/issues/49) | |
+| Spike: assistente de time com IA no aparelho (Gemma + LiteRT-LM) | [frontend#418](https://github.com/nunesvictor/ishinydex-frontend/issues/418) | Protótipo descartável, sem compromisso. O modelo só explica: as contas vêm da sinergia por *function calling*. Comparar o PWA (web em *early preview*) e o `.ipa` nativo: tamanho do download, tempo, qualidade em pt-BR e uso sem rede. O resultado entra na decisão do app nativo ([#50](https://github.com/nunesvictor/ishinydex/issues/50)). |
 | Conferir os dados do app instalado depois de ~7 dias sem uso (iOS) | [#83](https://github.com/nunesvictor/ishinydex/issues/83) | Verificação manual, não é código. |
