@@ -23,6 +23,7 @@ Tudo ficou atrás de `--dart-define=AI_SPIKE=true`. Foram testados dois caminhos
 
 - **Memória:** no nativo, o modelo carregou sem o app fechar, com a assinatura grátis.
 - **Persistência:** o modelo sobreviveu à atualização do app instalada por cima.
+- **Sem rede:** em modo avião, com o app fechado antes, o modelo carregou em 1,1 s e respondeu "Como está meu time?" (1º token em 3,8 s, total de 8,3 s). Depois do download, o assistente não depende de internet.
 - **Chromium mais antigo:** no do Playwright (Chromium 129), a carga falhou com `subgroupMinSize` indefinido, um recurso novo do WebGPU que ele não tem.
 
 ## Qualidade das respostas
@@ -54,6 +55,3 @@ Tudo ficou atrás de `--dart-define=AI_SPIKE=true`. Foram testados dois caminhos
 - **SideStore:** o login dentro do app está quebrado desde 2026-11-21. A Apple responde HTTP 401 ("PTM/TK endpoint"), e o mesmo erro aparece em outras ferramentas; ver [SideStore#1755](https://github.com/SideStore/SideStore/issues/1755). Enquanto isso, a instalação e a renovação de 7 dias passam pelo iloader no PC.
 - **Sync:** o Dropbox não funciona no nativo. O build não recebe a `DROPBOX_APP_KEY`, e o login do Dropbox só sabe voltar para uma página web. Os dados foram por Exportar e Importar.
 - **Próximo passo, se o nativo seguir:** conta de desenvolvedor + TestFlight, para atualizar junto com cada tag do PWA, que continua sempre primeiro.
-
-## Pendente
-- **Modo avião no nativo:** fechar o app, carregar o modelo sem rede e conversar.
