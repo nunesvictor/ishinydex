@@ -1,0 +1,88 @@
+# Gera o app nativo do iPhone (.ipa sem assinatura) em cada versão e o
+# anexa à release daqui, para instalar por sideload (iloader ou SideStore),
+# #276.
+#
+# O PWA vem sempre primeiro (#50): este workflow é separado do Pages e não o
+# bloqueia. Se o build do iPhone falhar, o site sai igual.
+#
+# Dispara com a tag v* (criada por tool/release.py), junto com o Pages. À mão
+# (Actions → iOS (.ipa) → Run workflow), gera de novo o .ipa de uma tag já
+# publicada.
+#
+# O app nativo baixa o catálogo do próprio GitHub Pages. O sync do Dropbox
+# fica de fora: a chave e o retorno do login só existem na web.
+name: iOS (.ipa)
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag já publicada (ex.: v2.24.0)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ipa-${{ inputs.tag || github.ref_name }}
+
+env:
+  # A mesma versão do Pages e do CI.
+  FLUTTER_VERSION: 3.50.1
+
+jobs:
+  ipa:
+    name: Build iOS sem assinatura
+    runs-on: macos-latest
+    timeout-minutes: 40
+    env:
+      TAG: ${{ inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.TAG }}
+          submodules: true
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Build
+        working-directory: frontend
+        env:
+          CATALOG_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/catalog/catalog.json
+        run: |
+          flutter pub get
+          dart run build_runner build -d
+          flutter build ios --release --no-codesign \
+            --dart-define=LOCAL_DATA=true \
+            --dart-define=CATALOG_URL="$CATALOG_URL" \
+            --dart-define=APP_VERSION="$TAG"
+
+      # Um .ipa é só um zip com o Runner.app dentro de uma pasta Payload/.
+      - name: Empacotar .ipa
+        run: |
+          mkdir -p Payload
+          cp -R frontend/build/ios/iphoneos/Runner.app Payload/
+          zip -qry "ishinydex-$TAG-ios.ipa" Payload
+
+      # O tool/release.py cria a release logo depois das tags; espera por
+      # ela por até 10 min, para não criar uma release no lugar dele.
+      - name: Anexar à release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          for _ in $(seq 20); do
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              gh release upload "$TAG" "ishinydex-$TAG-ios.ipa" --clobber
+              exit 0
+            fi
+            sleep 30
+          done
+          echo "::error::A release $TAG não existe: rode o tool/release.py e gere o .ipa à mão."
+          exit 1
