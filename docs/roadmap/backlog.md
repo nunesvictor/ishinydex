@@ -25,4 +25,5 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | --- | --- | --- |
 | Releases com binários: Linux, Windows, Android e macOS | [#50](https://github.com/nunesvictor/ishinydex/issues/50) | Ligado à meta do app nativo. |
 | Documentação técnica separada do README | [#49](https://github.com/nunesvictor/ishinydex/issues/49) | |
+| Dropbox no app nativo: login voltando sozinho ao app | [frontend#421](https://github.com/nunesvictor/ishinydex-frontend/issues/421) | Melhoria do login colando o código da v2.25.0 ([frontend#420](https://github.com/nunesvictor/ishinydex-frontend/issues/420)). Decidir pelo uso do nativo. Volta por uma página de ponte no Pages para um esquema do app (`ishinydex://`); pede registrar a URL da ponte no painel do Dropbox. |
 | Conferir os dados do app instalado depois de ~7 dias sem uso (iOS) | [#83](https://github.com/nunesvictor/ishinydex/issues/83) | Verificação manual, não é código. |
