@@ -10,7 +10,8 @@
 # publicada.
 #
 # O app nativo baixa o catálogo do próprio GitHub Pages. O sync do Dropbox
-# fica de fora: a chave e o retorno do login só existem na web.
+# usa a mesma App key do Pages (a variável DROPBOX_APP_KEY); no nativo, o
+# login termina colando o código que o Dropbox mostra (frontend#420).
 name: iOS (.ipa)
 
 on:
@@ -55,13 +56,16 @@ jobs:
         working-directory: frontend
         env:
           CATALOG_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/catalog/catalog.json
+          # Variável do repositório (pública); vazia, o app sai sem sync.
+          DROPBOX_APP_KEY: ${{ vars.DROPBOX_APP_KEY }}
         run: |
           flutter pub get
           dart run build_runner build -d
           flutter build ios --release --no-codesign \
             --dart-define=LOCAL_DATA=true \
             --dart-define=CATALOG_URL="$CATALOG_URL" \
-            --dart-define=APP_VERSION="$TAG"
+            --dart-define=APP_VERSION="$TAG" \
+            --dart-define=DROPBOX_APP_KEY="${DROPBOX_APP_KEY:-}"
 
       # Um .ipa é só um zip com o Runner.app dentro de uma pasta Payload/.
       - name: Empacotar .ipa
