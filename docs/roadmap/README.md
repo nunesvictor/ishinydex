@@ -17,7 +17,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.25.0 | em andamento (o `.ipa` do app nativo em cada release e o Dropbox no nativo, colando o código do login) | [v2.25.0.md](v2.25.0.md) |
+| v2.25.0 | lançado em 2026-11-22 (o `.ipa` do app nativo em cada release e o Dropbox no nativo, colando o código do login), aguardando o teste no iPhone | [v2.25.0.md](v2.25.0.md) |
 | v2.24.0 | lançado em 2026-11-20 (o formulário de espécime: gênero da forma com ♂/♀, busca no celular, efeito da natureza e o idioma do save; schema 8), já no Flutter 3.50.1 e com a v2.23.0 dentro, aguardando o teste no iPhone | [v2.24.0.md](v2.24.0.md) |
 | v2.23.0 | betas 1 a 3 (Flutter 3.50 e Dart 3.14: `material_ui`, Wasm no Safari e SafeArea); sem release final própria: saiu dentro da v2.24.0, já no 3.50.1 (2026-11-20) | [v2.23.0.md](v2.23.0.md) |
 | v2.22.0 | lançado em 2026-11-10 (lista de espécimes mais rápida, gênero validado, slots vazios fora do arquivo, limpeza das exclusões e ações do cartão de caçada alinhadas; schema 7), aguardando o teste no iPhone | [v2.22.0.md](v2.22.0.md) |
