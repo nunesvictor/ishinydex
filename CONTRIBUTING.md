@@ -96,6 +96,17 @@ release do backend (só no build) e a demonstração passa a usá-lo
 backend e atualize o `catalog.version` num PR. O ambiente `github-pages` aceita publicar
 a partir da `main` e das tags `v*`.
 
+### App nativo do iPhone (.ipa)
+
+A mesma tag `v*` também dispara o workflow **iOS (.ipa)**. Ele gera o app
+nativo sem assinatura (`ishinydex-<tag>-ios.ipa`) e o anexa à release, para
+instalar por sideload (iloader ou SideStore). Fica separado do Pages: o PWA
+vem primeiro, e uma falha no iPhone não segura o site. O app baixa o catálogo
+do próprio Pages e usa a mesma `DROPBOX_APP_KEY`; no nativo, o login do
+Dropbox termina colando o código que ele mostra (frontend#420). Para gerar de
+novo o `.ipa` de uma tag já publicada: **Actions → iOS (.ipa) → Run
+workflow**, com a tag.
+
 ## Atualizar os submodules
 
 O Dependabot abre os PRs toda semana. Para fazer à mão:
