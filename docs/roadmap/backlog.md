@@ -25,5 +25,4 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 | --- | --- | --- |
 | Releases com binários: Linux, Windows, Android e macOS | [#50](https://github.com/nunesvictor/ishinydex/issues/50) | Ligado à meta do app nativo. |
 | Documentação técnica separada do README | [#49](https://github.com/nunesvictor/ishinydex/issues/49) | |
-| Assistente de time com IA no aparelho (só no app nativo) | [frontend#418](https://github.com/nunesvictor/ishinydex-frontend/issues/418) | **Spike feito em 2026-11-22** ([resultado](ideias/ia-no-aparelho.md)): fora do PWA (no Safari do iPhone o chat não liberou; 2 GB de download). No nativo roda (carga em ~1 s depois da primeira, respostas em 4 a 8 s), mas o modelo erra o sentido dos dados: se for feito, o app roda as ferramentas e o modelo só redige. Recurso exclusivo do nativo ([#50](https://github.com/nunesvictor/ishinydex/issues/50)). |
 | Conferir os dados do app instalado depois de ~7 dias sem uso (iOS) | [#83](https://github.com/nunesvictor/ishinydex/issues/83) | Verificação manual, não é código. |
