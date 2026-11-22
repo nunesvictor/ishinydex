@@ -1,6 +1,6 @@
 # Assistente de time com IA no aparelho (spike)
 
-Issue: [frontend#418](https://github.com/nunesvictor/ishinydex-frontend/issues/418). Protótipo: [frontend#419](https://github.com/nunesvictor/ishinydex-frontend/pull/419), em rascunho e **sem merge**. Spike de 2026-11-22. Sem versão; ver [backlog](../backlog.md) e a meta do app nativo em [ishinydex#50](https://github.com/nunesvictor/ishinydex/issues/50).
+Issue: [frontend#418](https://github.com/nunesvictor/ishinydex-frontend/issues/418). Protótipo: [frontend#419](https://github.com/nunesvictor/ishinydex-frontend/pull/419), em rascunho e **sem merge**. Spike de 2026-11-22. **Ideia descartada no mesmo dia** (ver o fim da nota); fica só como registro. A meta do app nativo segue em [ishinydex#50](https://github.com/nunesvictor/ishinydex/issues/50).
 
 ## O que foi testado
 Um modelo de linguagem roda no aparelho e conversa sobre o time:
@@ -41,8 +41,9 @@ Tudo ficou atrás de `--dart-define=AI_SPIKE=true`. Foram testados dois caminhos
 
 ## Decisão
 1. **Não entra no PWA.** No Safari do iPhone, o modelo baixou, mas o chat não liberou. São 2 GB de download para um recurso opcional, o WASM tem teto de 4 GB e o suporte web do pacote ainda é *early preview*. O usuário também achou que não vale no PWA.
-2. **No app nativo, é viável e conta a favor do nativo:** roda, carrega em cerca de 1 s depois da primeira vez e responde em poucos segundos. Fica como candidato a recurso exclusivo do nativo, junto com Live Activity e widgets, sem versão.
-3. **Se for feito, o desenho muda:**
+2. **No app nativo, roda:** carrega em cerca de 1 s depois da primeira vez e responde em poucos segundos, até sem rede.
+3. **Mesmo assim, descartada (usuário, 2026-11-22):** acrescentou pouco em funcionalidade para um download de 2,6 GB. As respostas repetem o que a tela de sinergia já mostra com as contas do app, e com menos precisão. Não há issue no backlog; reabrir só se surgir um uso que as telas não resolvem.
+4. **Se um dia voltar, o desenho muda:**
    - **Perguntas comuns:** os botões de "Como está meu time?", "O que eu troco?" e "Que golpes?" rodam as ferramentas no app, sem esperar o modelo decidir.
    - **O que o modelo recebe:** frases prontas ("a nota sobe 28; fecha a fraqueza do time a Electric; você tem"), e não JSON para interpretar. Ele só costura o texto.
    - **Pergunta livre:** só ela deixa o modelo escolher a ferramenta. O pior caso é uma resposta genérica, nunca um número inventado.
