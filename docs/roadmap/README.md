@@ -17,7 +17,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.26.0 | em lançamento (os sprites guardados no aparelho, no app nativo) | [v2.26.0.md](v2.26.0.md) |
+| v2.26.0 | lançado em 2026-11-27 (os sprites guardados no aparelho, no app nativo), aguardando o teste no iPhone | [v2.26.0.md](v2.26.0.md) |
 | v2.25.1 | lançado em 2026-11-23 (a abertura do app nativo nas cores do app, sem a tela branca), aguardando o teste no iPhone | [v2.25.1.md](v2.25.1.md) |
 | v2.25.0 | lançado em 2026-11-22 (o `.ipa` do app nativo em cada release e o Dropbox no nativo, colando o código do login), aguardando o teste no iPhone | [v2.25.0.md](v2.25.0.md) |
 | v2.24.0 | lançado em 2026-11-20 (o formulário de espécime: gênero da forma com ♂/♀, busca no celular, efeito da natureza e o idioma do save; schema 8), já no Flutter 3.50.1 e com a v2.23.0 dentro, aguardando o teste no iPhone | [v2.24.0.md](v2.24.0.md) |
