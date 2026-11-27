@@ -4,8 +4,8 @@ Repositório unificador do iShinyDex: `backend/` (ishinydex-backend, Django) e `
 O usuário está aprendendo Flutter: explique as decisões. Textos, issues e PRs em pt-BR.
 
 ## Onde fica cada coisa
-- Só existe este clone (`~/dev/pessoal/ishinydex`). Desenvolve-se em **git worktrees dos submodules**, a partir de `origin/main`, fora da pasta do repositório:
-  `git -C backend worktree add ../../be-<n>-<resumo> -b <n>-<resumo> origin/main` (idem `frontend`). Isso não muda o commit checado no submodule (o repo pai não fica sujo). Remova a worktree ao final (`git worktree remove`).
+- Só existe este clone (`~/dev/pessoal/ishinydex`). Desenvolve-se em **git worktrees dos submodules**, a partir de `origin/main`, na pasta `.worktrees/` daqui (ignorada pelo git):
+  `git -C backend worktree add ../.worktrees/be-<n>-<resumo> -b <n>-<resumo> origin/main` (idem `frontend`, com `fe-`). Isso não muda o commit checado no submodule (o repo pai não fica sujo). Ficar dentro desta pasta deixa o Remote Control abrir os arquivos da worktree; fora dela, ele não abre. Remova a worktree ao final (`git -C frontend worktree remove ../.worktrees/fe-<n>-<resumo>`).
 - Convenções do frontend: `frontend/CLAUDE.md` (feature-first, Riverpod à mão, o backend local em `lib/fake/fake_backend.dart`, 100% de cobertura, telas testadas em `compactSize`/`expandedSize`); depois de clonar ou trocar de commit, `dart run build_runner build`.
 - Backend: `CONTRIBUTING.md` de lá; pre-commit (black, isort, flake8, pyright) com `PYENV_VERSION=ishinydex-3.14 pre-commit run --all-files`, **depois** do `git add` (arquivos não rastreados ficam de fora).
 - **Testes do backend:** o compose do backend é só de dev/testes. Numa worktree, cada cópia vira um projeto compose isolado (volumes próprios, banco sem porta publicada):

@@ -2,3 +2,5 @@
 backups/*
 !backups/.gitkeep
 __pycache__/
+# Worktrees dos submodules (ver o CLAUDE.md): dentro da pasta da sessão, fora do git.
+.worktrees/
