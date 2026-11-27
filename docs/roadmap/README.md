@@ -17,7 +17,7 @@ As ideias ainda sem versão ficam no [backlog](backlog.md), de onde escolhemos o
 
 | Versão | Status | Plano |
 | --- | --- | --- |
-| v2.27.2 | em lançamento (a Pokébola do sprite que não carregou também aparece nas casas registradas) | [v2.27.2.md](v2.27.2.md) |
+| v2.27.2 | lançado em 2026-11-27 (a Pokébola do sprite que não carregou também aparece nas casas registradas), aguardando o teste no iPhone | [v2.27.2.md](v2.27.2.md) |
 | v2.27.1 | lançado em 2026-11-27 (sprites do app nativo que falharam sem internet tentam de novo; Pokébola enquanto carregam), aguardando o teste no iPhone | [v2.27.1.md](v2.27.1.md) |
 | v2.27.0 | lançado em 2026-11-27 (app nativo: o catálogo guardado no aparelho para abrir sem internet, o Compartilhar do card, os links externos e o pré-carregamento das boxes vizinhas mais rápido); compartilhar e links confirmados no iPhone | [v2.27.0.md](v2.27.0.md) |
 | v2.26.0 | lançado em 2026-11-27 (os sprites guardados no aparelho, no app nativo), aguardando o teste no iPhone | [v2.26.0.md](v2.26.0.md) |
