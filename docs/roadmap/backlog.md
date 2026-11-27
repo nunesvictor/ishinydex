@@ -23,6 +23,7 @@ Ideia nova entra aqui primeiro, com uma issue curta (o quê e por quê). Mock, d
 ## Plataforma e documentação
 | Ideia | Issue | Notas |
 | --- | --- | --- |
+| Sprites que falharam tentam de novo quando o app volta ao primeiro plano | [frontend#438](https://github.com/nunesvictor/ishinydex-frontend/issues/438) | **Não sai sozinho:** pequeno; entra junto com uma funcionalidade que valha uma release ou com outro bugfix (usuário, 2026-11-27). Usa o mesmo `onResume` do sync. Hoje a box aberta só recarrega trocando de box e voltando, limite aceito. |
 | Releases com binários: Linux, Windows, Android e macOS | [#50](https://github.com/nunesvictor/ishinydex/issues/50) | Ligado à meta do app nativo. |
 | Documentação técnica separada do README | [#49](https://github.com/nunesvictor/ishinydex/issues/49) | |
 | Dropbox no app nativo: login voltando sozinho ao app | [frontend#421](https://github.com/nunesvictor/ishinydex-frontend/issues/421) | Melhoria do login colando o código da v2.25.0 ([frontend#420](https://github.com/nunesvictor/ishinydex-frontend/issues/420)). Decidir pelo uso do nativo. Volta por uma página de ponte no Pages para um esquema do app (`ishinydex://`); pede registrar a URL da ponte no painel do Dropbox. |
